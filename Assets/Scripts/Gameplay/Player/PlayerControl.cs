@@ -189,7 +189,7 @@ public class PlayerControl : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("yVelocity", rb.velocity.y);
-        // anim.SetBool("Crouch", crouchPressed);
+        anim.SetBool("isCrouching", isCrouching);
         // anim.SetBool("isWallSliding", isWallSliding);
     }
 
@@ -197,7 +197,7 @@ public class PlayerControl : MonoBehaviour
     {
         movementInputDirection = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !isCrouching)
         {
             if(isGrounded || (amountOfJumpsLeft > 0))
             {
@@ -227,10 +227,13 @@ public class PlayerControl : MonoBehaviour
         //     rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * variableJumpHeightMultiplier);
         // }
 
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash") && isGrounded && !isCrouching)
         {
-            if(Time.time >= (lastDash + dashCoolDown))
-            AttemptToDash();
+            // Tambahkan kondisi untuk memastikan pemain tidak dapat dash saat melompat
+            if (Time.time >= (lastDash + dashCoolDown))
+            {
+                AttemptToDash();
+            }
         }
 
         //If we press Crouch button enable crouch 
@@ -241,7 +244,8 @@ public class PlayerControl : MonoBehaviour
            
         //Otherwise disable it
         else if (Input.GetButtonUp("Crouch")){
-            if (!hasObstacleAbove)
+            // Tambahkan kondisi untuk memastikan pemain tidak dapat dash saat crouching
+            if (!hasObstacleAbove && !isAttemptingToJump)
             {
                 CrouchUp();
             }
@@ -288,6 +292,7 @@ public class PlayerControl : MonoBehaviour
                 isDashing = false;
                 canMove = true;
                 canFlip = true;
+                isAttemptingToJump = false; // Tambahkan baris ini
             }
             
         }

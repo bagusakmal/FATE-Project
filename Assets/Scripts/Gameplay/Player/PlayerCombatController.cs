@@ -7,7 +7,7 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField]
     private bool combatEnabled;
     [SerializeField]
-    private float inputTimer, attack1Radius, attack1Damage;
+    private float inputTimer, attackCooldown, attack1Radius, attack1Damage;
     //[SerializeField]
     //private float stunDamageAmount = 1f;
     [SerializeField]
@@ -18,7 +18,7 @@ public class PlayerCombatController : MonoBehaviour
     private bool gotInput, isAttacking; //isFirstAttack;
 
     private float lastInputTime = Mathf.NegativeInfinity;
-
+    private float lastAttackTime = Mathf.NegativeInfinity;
     // private AttackDetails attackDetails;
 
     private Animator anim;
@@ -44,7 +44,7 @@ public class PlayerCombatController : MonoBehaviour
     {
        if (Input.GetMouseButtonDown(0))
        {
-           if (combatEnabled)
+           if (combatEnabled && Time.time >= lastAttackTime + attackCooldown )
            {
                //Attempt combat
                gotInput = true;
@@ -66,6 +66,7 @@ public class PlayerCombatController : MonoBehaviour
                anim.SetBool("attack1", true);
                // anim.SetBool("firstAttack", isFirstAttack);
                anim.SetBool("isAttacking", isAttacking);
+               lastAttackTime = Time.time; // Set waktu terakhir saat serangan dilakukan
            }
        }
 
@@ -73,6 +74,11 @@ public class PlayerCombatController : MonoBehaviour
        {
            //Wait for new input
            gotInput = false;
+       }
+
+       if (Time.time >= lastAttackTime + attackCooldown && isAttacking)
+       {
+           FinishAttack1();
        }
     }
 
