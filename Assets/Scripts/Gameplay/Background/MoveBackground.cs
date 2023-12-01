@@ -29,7 +29,7 @@ public class MoveBackground : MonoBehaviour
     void Update()
     {
         Vector2 newPos = startPosition + travel * parallaxEffect;
-        Vector2 newYpos = startPosition + travel ;
+        Vector2 newYpos = startPosition + travel;
         transform.position = new Vector3(newPos.x, newYpos.y, startZ);
     }
 }

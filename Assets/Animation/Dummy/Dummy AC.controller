@@ -92,7 +92,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: PlayerOnLeft
+  - m_Name: playerOnLeft
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -151,7 +151,7 @@ AnimatorStateTransition:
     m_ConditionEvent: damage
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: PlayerOnLeft
+    m_ConditionEvent: playerOnLeft
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2871642783811212551}
@@ -201,7 +201,7 @@ AnimatorStateTransition:
     m_ConditionEvent: damage
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: PlayerOnLeft
+    m_ConditionEvent: playerOnLeft
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8916459478899132040}
