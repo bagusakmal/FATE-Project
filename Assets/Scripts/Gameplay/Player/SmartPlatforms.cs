@@ -3,16 +3,15 @@ using UnityEngine;
 
 public class PlayerOneWayPlatform : MonoBehaviour
 {
-    private GameObject currentOneWayPlatform;
+    private Collider2D[] currentOneWayPlatformColliders;
 
     [SerializeField] private Collider2D playerCollider;
-    
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (currentOneWayPlatform != null)
+            if (currentOneWayPlatformColliders != null)
             {
                 StartCoroutine(DisableCollision());
             }
@@ -23,7 +22,7 @@ public class PlayerOneWayPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
-            currentOneWayPlatform = collision.gameObject;
+            currentOneWayPlatformColliders = collision.gameObject.GetComponents<Collider2D>();
         }
     }
 
@@ -31,16 +30,36 @@ public class PlayerOneWayPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OneWayPlatform"))
         {
-            currentOneWayPlatform = null;
+            // Tidak perlu mengatur null di sini
         }
     }
 
     private IEnumerator DisableCollision()
     {
-        Collider2D platformCollider = currentOneWayPlatform.GetComponent<Collider2D>();
+        foreach (Collider2D platformCollider in currentOneWayPlatformColliders)
+        {
+            if (platformCollider != null && platformCollider.CompareTag("OneWayPlatform"))
+            {
+                Physics2D.IgnoreCollision(playerCollider, platformCollider);
+            }
+            else
+            {
+                Debug.LogWarning("One of the colliders in currentOneWayPlatformColliders is null or does not have the 'OneWayPlatform' tag.");
+            }
+        }
 
-        Physics2D.IgnoreCollision(playerCollider, platformCollider);
-        yield return new WaitForSeconds(0.4f);
-        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+        yield return new WaitUntil(() => !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow));
+
+        foreach (Collider2D platformCollider in currentOneWayPlatformColliders)
+        {
+            if (platformCollider != null && platformCollider.CompareTag("OneWayPlatform"))
+            {
+                Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+            }
+            else
+            {
+                Debug.LogWarning("One of the colliders in currentOneWayPlatformColliders is null or does not have the 'OneWayPlatform' tag.");
+            }
+        }
     }
 }
