@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4062ef0ec48c9249b1fc094cd1ae593, type: 3}
-  m_Name: Troll_BaseData
+  m_Name: Slime_BaseData
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 20
   damageHopSpeed: 3
   wallCheckDistance: 2
   ledgeCheckDistance: 2
   groundCheckRadius: 3
   minAgroDistance: 20
-  maxAgroDistance: 25
+  maxAgroDistance: 30
   stunResistance: 3
   stunRecoveryTime: 2
-  closeRangeActionDistance: 7.5
+  closeRangeActionDistance: 2.4
   hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
   whatIsGround:
     serializedVersion: 2
