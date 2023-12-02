@@ -98,7 +98,7 @@ public class PlayerControl : MonoBehaviour
         CheckJump();
         // CheckLedgeClimb();
         CheckDash();
-        // CheckKnockback();
+        CheckKnockback();
         
     }
     
