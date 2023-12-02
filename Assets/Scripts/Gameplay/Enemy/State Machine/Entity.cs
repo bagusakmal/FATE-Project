@@ -27,6 +27,7 @@ public class Entity : MonoBehaviour
     private float currentHealth;
     private float currentStunResistance;
     private float lastDamageTime;
+    private GameManager GM;
 
     private Vector2 velocityWorkspace;
 
@@ -43,6 +44,7 @@ public class Entity : MonoBehaviour
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = aliveGO.GetComponent<Animator>();
         atsm = aliveGO.GetComponent<AnimationToStatemachine>();
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         stateMachine = new FiniteStateMachine();
     }
@@ -147,6 +149,7 @@ public class Entity : MonoBehaviour
         if(currentHealth <= 0)
         {
             isDead = true;
+            
         }
     }
 

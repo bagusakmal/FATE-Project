@@ -127,7 +127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7564862756194955705}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: -5.2, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1720766144, guid: d5c79e7767b3855429c3349c821b5250, type: 3}
-  m_Color: {r: 1, g: 0.99433964, b: 0.99433964, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -377,8 +377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5604980fa58b544a6e3cf0e3ae04ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackDuration: 0
-  knockbackSpeed: {x: 0, y: 0}
+  knockbackDuration: 0.5
+  knockbackSpeed: {x: 10, y: 5}
   amountOfJumps: 2
   movementSpeed: 25
   crouchSpeed: 0.36
@@ -433,5 +433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   deathChunkParticle: {fileID: 0}
-  player: {fileID: 0}
+  hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
   deathBloodParticle: {fileID: 0}
+  pauseMenu: {fileID: 0}

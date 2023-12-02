@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     private float maxHealth;
 
     [SerializeField]
-    private GameObject deathChunkParticle, deathBloodParticle;
+    private GameObject deathChunkParticle, hitParticle, deathBloodParticle;
     public GameObject pauseMenu;
 
     private float currentHealth;
@@ -34,6 +34,11 @@ public class PlayerStats : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            Instantiate(hitParticle, anim.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+            anim.SetTrigger("damage");
+        }
     }
 
     private void Die()
@@ -43,30 +48,6 @@ public class PlayerStats : MonoBehaviour
 
         // Instantiate(deathChunkParticle, transform.position, deathChunkParticle.transform.rotation);
         // Instantiate(deathBloodParticle, transform.position, deathBloodParticle.transform.rotation);
-        PauseGame();
-    }
-
-    private void Update()
-    {
-        // Move this part to Update to listen for Escape key
-        if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
-        {
-            GM.Respawn();
-            ResumeGame(); // Add this line to resume the game after respawn
-        }
-    }
-
-    public void PauseGame()
-    {
-        Time.timeScale = 0;
-        isPaused = true;
-        pauseMenu.SetActive(true);
-    }
-
-    public void ResumeGame()
-    {
-        Time.timeScale = 1; // Set timeScale back to 1 to resume the game
-        isPaused = false;
-        pauseMenu.SetActive(false);
+        GM.gameOver();
     }
 }
