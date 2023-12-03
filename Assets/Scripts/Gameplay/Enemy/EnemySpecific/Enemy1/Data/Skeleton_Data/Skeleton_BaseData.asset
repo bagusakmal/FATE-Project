@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4062ef0ec48c9249b1fc094cd1ae593, type: 3}
+  m_Name: Skeleton_BaseData
+  m_EditorClassIdentifier: 
+  maxHealth: 30
+  damageHopSpeed: 3
+  wallCheckDistance: 2
+  ledgeCheckDistance: 2
+  groundCheckRadius: 3
+  minAgroDistance: 20
+  maxAgroDistance: 25
+  stunResistance: 3
+  stunRecoveryTime: 2
+  closeRangeActionDistance: 6.5
+  hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df39acc5a2af6824eb71c21c732f0b78, type: 3}
-  m_Name: Slime_MeleeAttackData
+  m_Name: Skeleton_MeleeAttackData
   m_EditorClassIdentifier: 
-  attackRadius: 2.5
-  attackDamage: 10
+  attackRadius: 6
+  attackDamage: 15
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 1024
