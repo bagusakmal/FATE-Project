@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b2fc504a0218c24bb65e4c7fc608e45
+guid: 9eb3caa95ff4be3409ae893f72f67ba1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -162,13 +162,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soul_move_0
+      name: mage_guardian-magenta_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 672
-        width: 96
-        height: 96
+        x: 16
+        y: 5
+        width: 33
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3cc8067d72646a41b2a368fd87ede94
-      internalID: -97411092
+      spriteID: 077aa77799dbc514588190830b2491fc
+      internalID: -585432480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soul_move_1
+      name: mage_guardian-magenta_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 576
-        width: 96
-        height: 96
+        x: 80
+        y: 5
+        width: 33
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8029ef43f36d50842821b8006fb9ef71
-      internalID: 914840867
+      spriteID: b39cf01f0d6b1514a96ea874f87c09af
+      internalID: -514382166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soul_move_2
+      name: mage_guardian-magenta_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 480
-        width: 96
-        height: 96
+        x: 144
+        y: 5
+        width: 33
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 926a9a65937399a4dba850f61bfa1c26
-      internalID: -1869483972
+      spriteID: 04aa34d4b088352479a4d1a098b240ef
+      internalID: -457305487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soul_move_3
+      name: mage_guardian-magenta_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
-        width: 96
-        height: 96
+        x: 208
+        y: 5
+        width: 33
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0e8056d969e2b94d96036920bf1b182
-      internalID: -1299212730
+      spriteID: 46a3d0d88e8c4774d941350bde2b8853
+      internalID: 1882244720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soul_move_4
+      name: mage_guardian-magenta_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 288
-        width: 96
-        height: 96
+        x: 272
+        y: 6
+        width: 33
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42f871d1ef4ac1940af9116a175cccdc
-      internalID: -368360213
+      spriteID: f3509edecd3a077489186e194b4479ca
+      internalID: 1249230155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soul_move_5
+      name: mage_guardian-magenta_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 96
-        height: 96
+        x: 337
+        y: 16
+        width: 28
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0aa6aa9ce7eceff48a6f25c8115636ce
-      internalID: -473508729
+      spriteID: 53c38e6d8c6d6a0488c3be087807cc4e
+      internalID: -1164305714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soul_move_6
+      name: mage_guardian-magenta_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 96
-        height: 96
+        x: 401
+        y: 18
+        width: 28
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 933c855f314394f47b28f70e70888834
-      internalID: 954303538
+      spriteID: 200b3f53828bd4240a2476f11e72d26b
+      internalID: 95985859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soul_move_7
+      name: mage_guardian-magenta_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
-        height: 96
+        x: 464
+        y: 5
+        width: 33
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,8 +323,197 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4be443f7910a03478154d306b6d1d3f
-      internalID: -968499311
+      spriteID: 5f68ed86100d63543baf29a9348d7a43
+      internalID: -897947036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 5
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d4265c037066d48ba8512d41f53fba
+      internalID: -1763727283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_9
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 17
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b056816fbe7fc4b912a76ea7ad6127
+      internalID: -439030932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_10
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 5
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6deefe7e45d818e4facaae507b5d16aa
+      internalID: -1449285634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_11
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 5
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04dbfe7d93e5a96498e07eddd6efa757
+      internalID: 1970142545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_12
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 6
+        width: 33
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43bfbc316795abd47adca06fc186f455
+      internalID: 789135925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_13
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 6
+        width: 33
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042df4e3afc3113488c8ca19ad7db228
+      internalID: 1612494696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_14
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 5
+        width: 33
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212ecfe14909c5b4caf66e07ef6ad88c
+      internalID: 1279266492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_15
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 6
+        width: 33
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f8bfcdf4f9dda47963e89582753fd7
+      internalID: -1344447669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mage_guardian-magenta_16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 5
+        width: 33
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6c5bf6d6cb285429f33903b23bc975
+      internalID: 1447035421
       vertices: []
       indices: 
       edges: []
@@ -340,14 +529,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Soul_move_0: -97411092
-      Soul_move_1: 914840867
-      Soul_move_2: -1869483972
-      Soul_move_3: -1299212730
-      Soul_move_4: -368360213
-      Soul_move_5: -473508729
-      Soul_move_6: 954303538
-      Soul_move_7: -968499311
+      mage_guardian-magenta_0: -585432480
+      mage_guardian-magenta_1: -514382166
+      mage_guardian-magenta_10: -1449285634
+      mage_guardian-magenta_11: 1970142545
+      mage_guardian-magenta_12: 789135925
+      mage_guardian-magenta_13: 1612494696
+      mage_guardian-magenta_14: 1279266492
+      mage_guardian-magenta_15: -1344447669
+      mage_guardian-magenta_16: 1447035421
+      mage_guardian-magenta_2: -457305487
+      mage_guardian-magenta_3: 1882244720
+      mage_guardian-magenta_4: 1249230155
+      mage_guardian-magenta_5: -1164305714
+      mage_guardian-magenta_6: 95985859
+      mage_guardian-magenta_7: -897947036
+      mage_guardian-magenta_8: -1763727283
+      mage_guardian-magenta_9: -439030932
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

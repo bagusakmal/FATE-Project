@@ -67,10 +67,12 @@ public class GameManager : MonoBehaviour
 
     public void gameOver () 
     {
+        Time.timeScale = 0;
         GameOver.SetActive(true);
     }
     public void restart () 
     {
+        Time.timeScale = 1;
            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
     }
 }
