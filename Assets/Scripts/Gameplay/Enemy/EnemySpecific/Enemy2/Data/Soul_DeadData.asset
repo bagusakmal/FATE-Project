@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86db8019f6bc1374a8a9fde0fe5b04af, type: 3}
   m_Name: Soul_DeadData
   m_EditorClassIdentifier: 
-  deathBloodParticle: {fileID: 367146862860765399, guid: f7cff56adf838254982b98bdc5ae5adc, type: 3}
+  deathBloodParticle: {fileID: 2893235898157843715, guid: ce12e84093afc904bbe879d997db59a7, type: 3}

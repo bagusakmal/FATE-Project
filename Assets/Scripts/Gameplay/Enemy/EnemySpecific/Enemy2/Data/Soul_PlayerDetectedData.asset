@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f2bda0a252d6849a05ba8c0a688934, type: 3}
   m_Name: Soul_PlayerDetectedData
   m_EditorClassIdentifier: 
-  longRangeActionTime: 1
+  longRangeActionTime: 0.1
