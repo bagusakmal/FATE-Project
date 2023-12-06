@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86db8019f6bc1374a8a9fde0fe5b04af, type: 3}
   m_Name: Troll_DeadData
   m_EditorClassIdentifier: 
+  deathChunkParticle: {fileID: 3739192970158541991, guid: 4cb68082ebe0ada44b99245c365d20cc, type: 3}
   deathBloodParticle: {fileID: 8382615338604765449, guid: c536de672539d984aa5fe84e50fea1c6, type: 3}
