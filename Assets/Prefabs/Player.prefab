@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 3986531913600859051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.69, y: -1.08, z: 0}
+  m_LocalPosition: {x: 5.26, y: 0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -412,7 +412,7 @@ MonoBehaviour:
   combatEnabled: 1
   inputTimer: 0.2
   attackCooldown: 1
-  attack1Radius: 3
+  attack1Radius: 5
   attack1Damage: 10
   stunDamageAmount: 1
   attack1HitBoxPos: {fileID: 4798117814911154023}
