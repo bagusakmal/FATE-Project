@@ -18,6 +18,9 @@ public class PlayerStats : MonoBehaviour
     private GameManager GM;
     private bool die = false;
     private bool isPaused = false;
+    public int damageAmount = 10;
+    private bool isTakingDamage = false; // Flag untuk menandakan apakah pemain sedang mengalami damage
+    public float damageInterval = 1.0f; // Interval waktu antara setiap serangan
 
     private void Start()
     {
@@ -26,6 +29,14 @@ public class PlayerStats : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+     private void Update()
+    {
+        // // Jika pemain sedang mengalami damage dan game tidak sedang di-pause
+        // if (isTakingDamage && !isPaused)
+        // {
+        //     StartCoroutine(TakeDamageRepeatedly());
+        // }
+    }
     public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
@@ -40,6 +51,32 @@ public class PlayerStats : MonoBehaviour
             anim.SetTrigger("damage");
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Spike")) // Ganti dengan tag yang sesuai pada tile spike
+        {
+            DecreaseHealth(damageAmount);
+            isTakingDamage = true; // Pemain mengalami damage
+
+        }
+    }
+     private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Spike")) // Ganti dengan tag yang sesuai pada tile spike
+        {
+            isTakingDamage = false; // Pemain meninggalkan area spike
+        }
+    }
+
+    // private IEnumerator TakeDamageRepeatedly()
+    // {
+    //     while (isTakingDamage)
+    //     {
+    //         yield return new WaitForSeconds(damageInterval);
+
+    //         DecreaseHealth(damageAmount);
+    //     }
+    // }
 
     private void Die()
     {

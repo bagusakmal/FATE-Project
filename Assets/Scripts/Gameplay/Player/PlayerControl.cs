@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     private float movementInputDirection;
-    private float jumpTimer;
+    // private float jumpTimer;
     private float turnTimer;
     private float dashTimeLeft;
     private float lastImageXpos;
@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour
     private bool canNormalJump;
     // private bool canWallJump;
     private bool isAttemptingToJump;
-    private bool checkJumpMultiplier;
+    // private bool checkJumpMultiplier;
     private bool canMove;
     private bool canFlip;
     // private bool hasWallJumped;
@@ -205,7 +205,7 @@ public class PlayerControl : MonoBehaviour
             }
             else
             {
-                jumpTimer = jumpTimerSet;
+                // jumpTimer = jumpTimerSet;
                 isAttemptingToJump = true;
             }
         }
@@ -302,7 +302,7 @@ private void CheckJump()
     {
         if(isAttemptingToJump)
         {
-            jumpTimer -= Time.deltaTime;
+            // jumpTimer -= Time.deltaTime;
         }
     }
 
@@ -312,9 +312,9 @@ private void CheckJump()
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             amountOfJumpsLeft--;
-            jumpTimer = 0;
+            // jumpTimer = 0;
             isAttemptingToJump = false;
-            checkJumpMultiplier = true;
+            // checkJumpMultiplier = true;
         }
     }
 
@@ -336,6 +336,19 @@ private void CheckJump()
     public void EnableFlip()
     {
         canFlip = true;
+    }
+
+    public void DisableMove()
+    {
+        canMove = false;
+        rb.velocity = new Vector2 (0,0);
+        
+    }
+
+    public void EnableMove()
+    {
+        canMove = true;
+        rb.velocity = new Vector2 (rb.velocity.x,rb.velocity.y);
     }
 
     private void Flip()

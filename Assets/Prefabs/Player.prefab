@@ -411,7 +411,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatEnabled: 1
   inputTimer: 0.2
-  attackCooldown: 1
   attack1Radius: 5
   attack1Damage: 10
   stunDamageAmount: 1
@@ -419,6 +418,7 @@ MonoBehaviour:
   whatIsDamageable:
     serializedVersion: 2
     m_Bits: 256
+  attackCooldown: 1
 --- !u!114 &4993436220870558399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,3 +436,5 @@ MonoBehaviour:
   hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
   deathBloodParticle: {fileID: 0}
   pauseMenu: {fileID: 0}
+  damageAmount: 2
+  damageInterval: 5
