@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    // Declare the event within the PlayerStats class
+    public event Action<PlayerStats> OnPlayerStatsInitialized;
+
     [SerializeField]
-    private float maxHealth;
+    public static float maxHealth = 50f;
+    
 
     [SerializeField]
     private GameObject deathChunkParticle, hitParticle, deathBloodParticle;
@@ -17,16 +22,28 @@ public class PlayerStats : MonoBehaviour
 
     private GameManager GM;
     private bool die = false;
-    private bool isPaused = false;
+    // private bool isPaused = false;
     public int damageAmount = 10;
     private bool isTakingDamage = false; // Flag untuk menandakan apakah pemain sedang mengalami damage
     public float damageInterval = 1.0f; // Interval waktu antara setiap serangan
+    // Add these methods to get current health and max health
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
 
     private void Start()
     {
         currentHealth = maxHealth;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
+         // Trigger the initialization event
+        OnPlayerStatsInitialized?.Invoke(this);
     }
 
      private void Update()
@@ -37,6 +54,21 @@ public class PlayerStats : MonoBehaviour
         //     StartCoroutine(TakeDamageRepeatedly());
         // }
     }
+
+   public static float GetCurrentHealthNormalized(float currentHealth, float maxHealth)
+{
+    // Check for division by zero or invalid values
+    if (maxHealth > 0f && !float.IsNaN(currentHealth) && !float.IsInfinity(currentHealth))
+    {
+        return currentHealth / maxHealth;
+    }
+    else
+    {
+        // Log an error and return a default value
+        Debug.LogError("Invalid health values: currentHealth=" + currentHealth + ", maxHealth=" + maxHealth);
+        return 0f;
+    }
+}
     public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
@@ -47,8 +79,14 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            Instantiate(hitParticle, anim.transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)));
+            Instantiate(hitParticle, anim.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f)));
+
             anim.SetTrigger("damage");
+            // Pass the correct parameters to GetCurrentHealthNormalized
+            float normalizedHealth = GetCurrentHealthNormalized(currentHealth, maxHealth);
+
+             // Update the health bar when the player takes damage
+            FindObjectOfType<HealthBar>().UpdateHealthBar(PlayerStats.GetCurrentHealthNormalized(currentHealth, maxHealth));
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

@@ -185,7 +185,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(collision.tag == "Spike")
         {
-            healthBar.Damage(0.002f);
+            // healthBar.Damage(0.002f);
         }
     }
 

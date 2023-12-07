@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,39 +6,53 @@ public class HealthBar : MonoBehaviour
     private RectTransform bar;
     private Image barImage;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         bar = GetComponent<RectTransform>();
         barImage = GetComponent<Image>();
-        if (Health.totalHealth < 0.3f)
-        {
-            barImage.color = Color.red;
-        }
-        SetSize(Health.totalHealth);
     }
 
-    public void Damage(float damage)
+    void Start()
     {
-        if((Health.totalHealth -= damage) >= 0f)
+        // Find the PlayerStats component in the scene
+        PlayerStats playerStats = GameObject.FindWithTag("Player")?.GetComponent<PlayerStats>();
+
+        // Subscribe to the PlayerStats initialization event
+        if (playerStats != null)
         {
-            Health.totalHealth -= damage;
+            playerStats.OnPlayerStatsInitialized += HandlePlayerStatsInitialized;
         }
         else
         {
-            Health.totalHealth = 0f;
+            Debug.LogError("PlayerStats component not found!");
         }
+    }
 
-        if(Health.totalHealth < 0.3f)
+    void HandlePlayerStatsInitialized(PlayerStats playerStats)
+    {
+        // Update the health bar when the player stats are initialized
+        UpdateHealthBar(PlayerStats.GetCurrentHealthNormalized(playerStats.GetCurrentHealth(), playerStats.GetMaxHealth()));
+    }
+
+    public void UpdateHealthBar(float normalizedHealth)
+    {
+        SetSize(normalizedHealth);
+
+        if (normalizedHealth < 0.1f)
         {
             barImage.color = Color.red;
         }
-
-        SetSize(Health.totalHealth);
     }
 
-    public void SetSize(float size)
+    private void SetSize(float size)
     {
-        bar.localScale = new Vector3(size, 1f);
+        if (!float.IsNaN(size) && !float.IsInfinity(size))
+        {
+            bar.localScale = new Vector3(size, 1f, 1f);
+        }
+        else
+        {
+            Debug.LogError("Invalid size value: " + size);
+        }
     }
 }
