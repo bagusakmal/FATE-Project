@@ -20,11 +20,34 @@ public class GameManager : MonoBehaviour
     private CinemachineVirtualCamera CVC;
     public GameObject GameOver;
 
+    public const string DestroyedObjectsKey = "DestroyedObjects";
+
     private void Start()
     {
-        // CVC = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
-        
+        string destroyedObjectsData = PlayerPrefs.GetString(DestroyedObjectsKey, "");
+        string[] destroyedObjectsArray = destroyedObjectsData.Split(',');
+
+        foreach (string objectName in destroyedObjectsArray)
+        {
+            if (!string.IsNullOrEmpty(objectName))
+            {
+                GameObject destroyedObject = GameObject.Find(objectName);
+                if (destroyedObject != null)
+                {
+                    Destroy(destroyedObject);
+                }
+            }
+        }
     }
+
+    public void OnObjectDestroyed(string objectName)
+    {
+        string destroyedObjectsData = PlayerPrefs.GetString(DestroyedObjectsKey, "");
+        destroyedObjectsData += objectName + ",";
+        PlayerPrefs.SetString(DestroyedObjectsKey, destroyedObjectsData);
+        PlayerPrefs.Save();
+    }
+
 
     private void Update()
     {
@@ -75,4 +98,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
     }
+
+    
 }
