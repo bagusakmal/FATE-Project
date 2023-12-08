@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
     private GameObject deathChunkParticle, hitParticle, deathBloodParticle;
     public GameObject pauseMenu;
 
-    private float currentHealth;
+    public float currentHealth;
 
     private Animator anim;
 
