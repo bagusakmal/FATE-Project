@@ -15,7 +15,8 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsDamageable;
 
-    private bool gotInput, isAttacking, isFirstAttack;
+    private bool gotInput, isFirstAttack;
+    public bool isAttacking;
 
     private float lastInputTime = Mathf.NegativeInfinity;
     private float lastAttackTime = Mathf.NegativeInfinity;
