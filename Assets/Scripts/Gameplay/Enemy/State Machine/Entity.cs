@@ -20,7 +20,7 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private Transform ledgeCheck;
     [SerializeField]
-    private Transform playerCheck;
+    public Transform playerCheck;
     [SerializeField]
     private Transform groundCheck;
 

@@ -383,7 +383,7 @@ MonoBehaviour:
   movementSpeed: 25
   crouchSpeed: 0.36
   jumpForce: 50
-  groundCheckRadius: 0.1
+  groundCheckRadius: 1.4
   overheadCheckRadius: 1.5
   jumpTimerSet: 0.15
   dashTime: 0.2
@@ -418,6 +418,7 @@ MonoBehaviour:
   whatIsDamageable:
     serializedVersion: 2
     m_Bits: 256
+  isAttacking: 0
   attackCooldown: 1
 --- !u!114 &4993436220870558399
 MonoBehaviour:
@@ -431,10 +432,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11a47b60a9e4b84282d6d99802b21cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
   deathChunkParticle: {fileID: 0}
   hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
   deathBloodParticle: {fileID: 0}
   pauseMenu: {fileID: 0}
+  currentHealth: 0
   damageAmount: 2
   damageInterval: 5
+  healthText: {fileID: 0}
