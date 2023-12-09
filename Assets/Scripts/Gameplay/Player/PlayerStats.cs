@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using TMPro;
+
 
 public class PlayerStats : MonoBehaviour
 {
@@ -27,6 +29,9 @@ public class PlayerStats : MonoBehaviour
     private bool isTakingDamage = false; // Flag untuk menandakan apakah pemain sedang mengalami damage
     public float damageInterval = 1.0f; // Interval waktu antara setiap serangan
     // Add these methods to get current health and max health
+    [SerializeField]
+    private TextMeshProUGUI healthText;
+
     public float GetCurrentHealth()
     {
         return currentHealth;
@@ -44,6 +49,13 @@ public class PlayerStats : MonoBehaviour
         anim = GetComponent<Animator>();
          // Trigger the initialization event
         OnPlayerStatsInitialized?.Invoke(this);
+
+        UpdateHealthText();
+    }
+    private void UpdateHealthText()
+    {
+        // Update the TextMeshPro Text component with current and max health information
+        healthText.text = $"HP = {GetCurrentHealth()}/{GetMaxHealth()}";
     }
 
      private void Update()
@@ -87,6 +99,7 @@ public class PlayerStats : MonoBehaviour
 
              // Update the health bar when the player takes damage
             FindObjectOfType<HealthBar>().UpdateHealthBar(PlayerStats.GetCurrentHealthNormalized(currentHealth, maxHealth));
+            UpdateHealthText();
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
