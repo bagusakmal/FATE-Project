@@ -27,6 +27,7 @@ public class PlayerStats : MonoBehaviour
     // private bool isPaused = false;
     public int damageAmount = 10;
     private bool isTakingDamage = false; // Flag untuk menandakan apakah pemain sedang mengalami damage
+    private bool damage = false;
     public float damageInterval = 1.0f; // Interval waktu antara setiap serangan
     // Add these methods to get current health and max health
     [SerializeField]
@@ -92,8 +93,8 @@ public class PlayerStats : MonoBehaviour
         else
         {
             Instantiate(hitParticle, anim.transform.position, Quaternion.Euler(0.0f, 0.0f, UnityEngine.Random.Range(0.0f, 360.0f)));
-
-            anim.SetTrigger("damage");
+            damage = true;
+            anim.SetBool("damage",damage);
             // Pass the correct parameters to GetCurrentHealthNormalized
             float normalizedHealth = GetCurrentHealthNormalized(currentHealth, maxHealth);
 

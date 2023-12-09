@@ -116,6 +116,7 @@ public class PlayerControl : MonoBehaviour
     public void Knockback(int direction)
     {
         knockback = true;
+        
         knockbackStartTime = Time.time;
         rb.velocity = new Vector2(knockbackSpeed.x * direction, knockbackSpeed.y);
     }
@@ -190,6 +191,7 @@ public class PlayerControl : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isCrouching", isCrouching);
+        anim.SetBool("knockback", knockback);
         // anim.SetBool("isWallSliding", isWallSliding);
     }
 
