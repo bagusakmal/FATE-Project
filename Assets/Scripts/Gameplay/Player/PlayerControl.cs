@@ -38,8 +38,7 @@ public class PlayerControl : MonoBehaviour
     private bool isCrouching = false;
     private bool hasObstacleAbove = false;
     private bool knockback;
-    private bool crouchPressed;
-
+   
 
     [SerializeField]
     private Vector2 knockbackSpeed;
@@ -77,6 +76,8 @@ public class PlayerControl : MonoBehaviour
     public LayerMask whatIsGround;
     public Collider2D standingCollider,crouchingCollider;
 
+    private PlayerCombatController PC;
+
 
 
     // Start is called before the first frame update
@@ -85,6 +86,7 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         amountOfJumpsLeft = amountOfJumps;
+        PC = GetComponent<PlayerCombatController>();
     }
 
     // Update is called once per frame
@@ -199,7 +201,7 @@ public class PlayerControl : MonoBehaviour
     {
         movementInputDirection = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && !isCrouching)
+        if (Input.GetButtonDown("Jump") && !isCrouching && !PC.isAttacking)
         {
             if(isGrounded || (amountOfJumpsLeft > 0))
             {
@@ -310,7 +312,7 @@ private void CheckJump()
 
     private void NormalJump()
     {
-        if (canNormalJump)
+        if (canNormalJump )
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             amountOfJumpsLeft--;
