@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
     // Add these methods to get current health and max health
     [SerializeField]
     private TextMeshProUGUI healthText;
+    public event Action<float, float> OnHealthChanged;
 
     public float GetCurrentHealth()
     {
@@ -138,5 +139,17 @@ public class PlayerStats : MonoBehaviour
         // Instantiate(deathChunkParticle, transform.position, deathChunkParticle.transform.rotation);
         // Instantiate(deathBloodParticle, transform.position, deathBloodParticle.transform.rotation);
         GM.gameOver();
+    }
+     public void IncreaseHealth(float amount)
+    {
+        currentHealth += amount;
+
+        // Ensure health doesn't exceed the maximum
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+
+        UpdateHealthText();
+
+        // Trigger the OnHealthChanged event
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 }
