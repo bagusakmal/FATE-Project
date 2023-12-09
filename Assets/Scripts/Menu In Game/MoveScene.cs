@@ -23,7 +23,7 @@ public class MoveScene : MonoBehaviour
 
     private void Update()
     {
-        if (canProceed && Input.GetKeyDown(KeyCode.Return) && !isTransitioning)
+        if (canProceed && Input.GetKeyDown(KeyCode.F) && !isTransitioning)
         {
             isTransitioning = true;
             LoadSceneWithLoadingScreen();
