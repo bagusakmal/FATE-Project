@@ -9,8 +9,8 @@ public class PotionManager : MonoBehaviour
     public TextMeshProUGUI hpPotionCountText;
     public TextMeshProUGUI manaPotionCountText;
 
-    private int currentHpPotionCount = 0;
-    private int currentManaPotionCount = 0;
+    public int currentHpPotionCount = 0;
+    public int currentManaPotionCount = 0;
 
     void Start()
     {
