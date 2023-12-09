@@ -9,8 +9,8 @@ public class PotionManager : MonoBehaviour
     public TextMeshProUGUI hpPotionCountText;
     public TextMeshProUGUI manaPotionCountText;
 
-    private int currentHpPotionCount = 0;
-    private int currentManaPotionCount = 0;
+    public int currentHpPotionCount = 0;
+    public int currentManaPotionCount = 0;
 
     void Start()
     {
@@ -140,6 +140,28 @@ public class PotionManager : MonoBehaviour
         {
             // Increment the HP potion count
             currentHpPotionCount++;
+
+            // Save the updated count
+            SavePotionCount();
+
+            // Update the UI text
+            UpdatePotionCountText();
+
+            return true; // Successfully collected HP potion
+        }
+        else
+        {
+            Debug.Log("Inventory for HP potions is full!");
+            return false; // Unable to collect HP potion
+        }
+    }
+    public bool CollectManaPotion()
+    {
+        // Check if there is space in the inventory for HP potions
+        if (currentManaPotionCount < maxManaPotionCount)
+        {
+            // Increment the HP potion count
+            currentManaPotionCount++;
 
             // Save the updated count
             SavePotionCount();
