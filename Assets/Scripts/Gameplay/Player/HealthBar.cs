@@ -16,8 +16,7 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
-        // Find the PlayerStats component in the scene
-        playerStats = GameObject.FindWithTag("Player")?.GetComponent<PlayerStats>();
+        FindPlayerStats();
 
         // Subscribe to the PlayerStats initialization event
         if (playerStats != null)
@@ -28,6 +27,49 @@ public class HealthBar : MonoBehaviour
         else
         {
             Debug.LogError("PlayerStats component not found!");
+        }
+    }
+
+    void FindPlayerStats()
+    {
+        // Find the PlayerStats component in the scene
+        playerStats = GameObject.FindWithTag("Player")?.GetComponent<PlayerStats>();
+        
+        // Check if the playerStats is still null
+        if (playerStats == null)
+        {
+            Debug.LogError("PlayerStats component not found!");
+        }
+    }
+
+    void OnEnable()
+    {
+        // Subscribe to events when the script is enabled
+        FindPlayerStats();
+        SubscribeToEvents();
+    }
+
+    void OnDisable()
+    {
+        // Unsubscribe from events when the script is disabled
+        UnsubscribeFromEvents();
+    }
+
+    void SubscribeToEvents()
+    {
+        if (playerStats != null)
+        {
+            playerStats.OnPlayerStatsInitialized += HandlePlayerStatsInitialized;
+            playerStats.OnHealthChanged += HandleHealthChanged;
+        }
+    }
+
+    void UnsubscribeFromEvents()
+    {
+        if (playerStats != null)
+        {
+            playerStats.OnPlayerStatsInitialized -= HandlePlayerStatsInitialized;
+            playerStats.OnHealthChanged -= HandleHealthChanged;
         }
     }
 
@@ -51,7 +93,11 @@ public class HealthBar : MonoBehaviour
 
         if (normalizedHealth < 0.1f)
         {
-            barImage.color = Color.red;
+            barImage.color = Color.green;
+        }
+        else
+        {
+            barImage.color = Color.green; // Reset color to white if health is above the threshold
         }
     }
 
