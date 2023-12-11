@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
     public event Action<PlayerStats> OnPlayerStatsInitialized;
     [SerializeField]
-    public static float maxHealth = 50f;
+    public float maxHealth = 50f;
     [SerializeField]
     private GameObject deathChunkParticle, hitParticle, deathBloodParticle;
     public GameObject pauseMenu;
