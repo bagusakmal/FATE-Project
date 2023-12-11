@@ -5,18 +5,13 @@ using TMPro;
 public class PlayerStats : MonoBehaviour
 {
     public event Action<PlayerStats> OnPlayerStatsInitialized;
-
     [SerializeField]
     public static float maxHealth = 50f;
-
     [SerializeField]
     private GameObject deathChunkParticle, hitParticle, deathBloodParticle;
     public GameObject pauseMenu;
-
     public float currentHealth;
-
     private Animator anim;
-
     private GameManager GM;
     private bool die = false;
     public int damageAmount = 10;

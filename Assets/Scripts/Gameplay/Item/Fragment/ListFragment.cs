@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ListFragment : MonoBehaviour
 {
+    public PlayerCombatController playerCombatController;
+
     [System.Serializable]
     public struct ItemData
     {
@@ -69,14 +71,33 @@ public class ListFragment : MonoBehaviour
 
     void ApplyItemEffect(int itemIndex)
     {
-        // Change this with logic based on the desired item effects
         switch (itemIndex)
         {
             case 0:
-                playerStats.IncreaseMaxHealth(20f); // For example, add 10 max HP
+                playerStats.IncreaseMaxHealth(20f);
                 break;
             case 1:
-                playerStats.IncreaseMaxHealth(20f); // Effect for item with index 1
+                playerStats.IncreaseMaxHealth(20f);
+                break;
+            case 2:
+                if (playerCombatController != null)
+                {
+                    playerCombatController.IncreaseAttack1Damage(10f);
+                }
+                else
+                {
+                    Debug.LogError("PlayerCombatController is not assigned in ListFragment.");
+                }
+                break;
+            case 3:
+                if (playerCombatController != null)
+                {
+                    playerCombatController.IncreaseAttack1Damage(10f);
+                }
+                else
+                {
+                    Debug.LogError("PlayerCombatController is not assigned in ListFragment.");
+                }
                 break;
             // Add other cases as needed
             default:

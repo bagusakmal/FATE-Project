@@ -14,38 +14,62 @@ public class PlayerCombatController : MonoBehaviour
     private Transform attack1HitBoxPos;
     [SerializeField]
     private LayerMask whatIsDamageable;
-
     private bool gotInput, isFirstAttack;
     public bool isAttacking;
-
     private float lastInputTime = Mathf.NegativeInfinity;
     private float lastAttackTime = Mathf.NegativeInfinity;
-
     private AttackDetails attackDetails;
-
     private Animator anim;
-
     private PlayerControl PC;
     private PlayerStats PS;
-
     private int numberOfAttacks; // Track the number of attacks
     private bool isCooldown; // Track whether cooldown is active
-
     [SerializeField]
     private float attackCooldown; // Cooldown time after two attacks
-
+    private const string Attack1DamageKey = "Attack1Damage";
+    
     private void Start()
     {
         anim = GetComponent<Animator>();
         anim.SetBool("canAttack", combatEnabled);
         PC = GetComponent<PlayerControl>();
         PS = GetComponent<PlayerStats>();
+        LoadAttack1Damage();
     }
 
     private void Update()
     {
         CheckCombatInput();
         CheckAttacks();
+    }
+    public void IncreaseAttack1Damage(float amount)
+    {
+        attack1Damage += amount;
+        SaveAttack1Damage();
+    }
+
+    private void SaveAttack1Damage()
+    {
+        PlayerPrefs.SetFloat(Attack1DamageKey, attack1Damage);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadAttack1Damage()
+    {
+        if (PlayerPrefs.HasKey(Attack1DamageKey))
+        {
+            attack1Damage = PlayerPrefs.GetFloat(Attack1DamageKey);
+        }
+        else
+        {
+            attack1Damage = 10f; // Default value
+            SaveAttack1Damage();
+        }
+    }
+
+    public float GetAttack1Damage()
+    {
+        return attack1Damage;
     }
 
     private void CheckCombatInput()
