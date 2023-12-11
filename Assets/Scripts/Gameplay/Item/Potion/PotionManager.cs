@@ -8,15 +8,22 @@ public class PotionManager : MonoBehaviour
     public int maxManaPotionCount = 5;
     public TextMeshProUGUI hpPotionCountText;
     public TextMeshProUGUI manaPotionCountText;
+    public int healingAmount = 20; // Adjust the healing amount as needed
 
     public int currentHpPotionCount = 0;
     public int currentManaPotionCount = 0;
+
+    // Reference to the PlayerStats script
+    private PlayerStats playerStats;
 
     void Start()
     {
         // Muat jumlah item potion dari PlayerPrefs saat memulai
         LoadPotionCount();
         UpdatePotionCountText();
+
+        // Find and cache the PlayerStats component
+        playerStats = GameObject.Find("Player").GetComponent<PlayerStats>();
     }
 
     void Update()
@@ -41,17 +48,20 @@ public class PotionManager : MonoBehaviour
             // Cek apakah masih bisa mengambil potion
             if ((currentHpPotionCount < maxHpPotionCount) || (currentManaPotionCount < maxManaPotionCount))
             {
-                // Tambah satu ke jumlah potion yang dimiliki
                 currentHpPotionCount++;
 
-                // Hancurkan objek potion yang diambil
-                Destroy(gameObject);
+                // Use HP Potion and check if the inventory is not full
+                if (CollectHpPotion())
+                {
+                    // Destroy the potion object
+                    Destroy(gameObject);
 
-                // Simpan jumlah item potion ke PlayerPrefs
-                SavePotionCount();
+                    // Simpan jumlah item potion ke PlayerPrefs
+                    SavePotionCount();
 
-                // Update tampilan jumlah potion
-                UpdatePotionCountText();
+                    // Update tampilan jumlah potion
+                    UpdatePotionCountText();
+                }
             }
             else
             {
@@ -91,25 +101,27 @@ public class PotionManager : MonoBehaviour
 
     void UseHpPotion()
     {
-        // Cek apakah masih ada hpPotion yang tersedia
-        if (currentHpPotionCount > 0)
+    // Cek apakah masih ada hpPotion yang tersedia
+    if (currentHpPotionCount > 0)
+    {
+        // Gunakan hpPotion dan tambahkan logika peningkatan HP di sini
+        if (playerStats != null)
         {
-            // Gunakan hpPotion, contoh: tambahkan logika penambahan HP di sini
-            Debug.Log("Menggunakan HP Potion");
-
-            // Kurangi jumlah hpPotion yang dimiliki
-            currentHpPotionCount--;
-
-            // Simpan jumlah item potion ke PlayerPrefs
-            SavePotionCount();
-
-            // Update tampilan jumlah potion
-            UpdatePotionCountText();
+            playerStats.IncreaseHealth(healingAmount);
         }
-        else
-        {
-            Debug.Log("Tidak ada HP Potion yang tersedia.");
-        }
+
+        currentHpPotionCount--;
+
+        // Simpan jumlah item potion ke PlayerPrefs
+        SavePotionCount();
+
+        // Update tampilan jumlah potion
+        UpdatePotionCountText();
+    }
+    else
+    {
+        Debug.Log("Tidak ada HP Potion yang tersedia.");
+    }
     }
 
     void UseManaPotion()
@@ -117,7 +129,7 @@ public class PotionManager : MonoBehaviour
         // Cek apakah masih ada manaPotion yang tersedia
         if (currentManaPotionCount > 0)
         {
-            // Gunakan manaPotion, contoh: tambahkan logika penambahan Mana di sini
+            // Gunakan manaPotion dan tambahkan logika peningkatan Mana di sini
             Debug.Log("Menggunakan Mana Potion");
 
             // Kurangi jumlah manaPotion yang dimiliki
@@ -134,7 +146,8 @@ public class PotionManager : MonoBehaviour
             Debug.Log("Tidak ada Mana Potion yang tersedia.");
         }
     }
-     public bool CollectHpPotion()
+
+    public bool CollectHpPotion()
     {
         // Check if there is space in the inventory for HP potions
         if (currentHpPotionCount < maxHpPotionCount)
@@ -156,6 +169,7 @@ public class PotionManager : MonoBehaviour
             return false; // Unable to collect HP potion
         }
     }
+
     public bool CollectManaPotion()
     {
         // Check if there is space in the inventory for HP potions
