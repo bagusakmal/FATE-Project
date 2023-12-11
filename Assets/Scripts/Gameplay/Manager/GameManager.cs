@@ -12,14 +12,10 @@ public class GameManager : MonoBehaviour
     private GameObject playerPrefab;
     [SerializeField]
     private float respawnTime;
-
     private float respawnTimeStart;
-
     private bool respawn;
-
     private CinemachineVirtualCamera CVC;
     public GameObject GameOver;
-
     public const string DestroyedObjectsKey = "DestroyedObjects";
 
     private void Start()

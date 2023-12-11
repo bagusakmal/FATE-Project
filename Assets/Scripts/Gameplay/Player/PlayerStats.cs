@@ -5,6 +5,7 @@ using TMPro;
 public class PlayerStats : MonoBehaviour
 {
     public event Action<PlayerStats> OnPlayerStatsInitialized;
+
     [SerializeField]
     public float maxHealth = 50f;
     [SerializeField]

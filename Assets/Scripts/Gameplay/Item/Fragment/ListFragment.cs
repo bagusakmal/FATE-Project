@@ -16,11 +16,8 @@ public class ListFragment : MonoBehaviour
 
     public ItemData[] itemList;
     public Sprite defaultImage;
-
     public Image[] itemImages;
-
     public List<int> collectedItems = new List<int>();
-
     public PlayerStats playerStats; // Add reference to PlayerStats
 
     void Start()

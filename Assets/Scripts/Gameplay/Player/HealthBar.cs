@@ -5,7 +5,6 @@ public class HealthBar : MonoBehaviour
 {
     private RectTransform bar;
     private Image barImage;
-
     private PlayerStats playerStats;
 
     void Awake()
