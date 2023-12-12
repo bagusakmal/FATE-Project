@@ -1,17 +1,20 @@
 using System;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class PlayerStats : MonoBehaviour
 {
     public event Action<PlayerStats> OnPlayerStatsInitialized;
 
     [SerializeField]
-    public float maxHealth = 50f;
+    public float maxHealth = 50f, maxMana = 50f;
     [SerializeField]
     private GameObject deathChunkParticle, hitParticle, deathBloodParticle;
+    [SerializeField]
+    private float manaRegenerationRate = 1f;
     public GameObject pauseMenu;
-    public float currentHealth;
+    public float currentHealth, currentMana;
     private Animator anim;
     private GameManager GM;
     private bool die = false;
@@ -23,7 +26,12 @@ public class PlayerStats : MonoBehaviour
     private TextMeshProUGUI healthText;
     [SerializeField]
     private TextMeshProUGUI healthText2;
+    [SerializeField]
+    private TextMeshProUGUI manaText;
+    [SerializeField]
+    private TextMeshProUGUI manaText2;
     public event Action<float, float> OnHealthChanged;
+    public event Action<float, float> OnManaChanged;
 
     public float GetCurrentHealth()
     {
@@ -35,21 +43,38 @@ public class PlayerStats : MonoBehaviour
         return maxHealth;
     }
 
+    public float GetCurrentMana()
+    {
+        return currentMana;
+    }
+
+    public float GetMaxMana()
+    {
+        return maxMana;
+    }
+
     private void Start()
     {
         currentHealth = maxHealth;
+        currentMana = maxMana;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
         // Trigger the initialization event
         OnPlayerStatsInitialized?.Invoke(this);
 
         UpdateHealthText();
+        UpdateManaText();
     }
 
     private void UpdateHealthText()
     {
     healthText.text = $"HP = {GetCurrentHealth()}/{GetMaxHealth()}";
     healthText2.text = $"HP: {GetCurrentHealth()} / {GetMaxHealth()}";
+    }
+    private void UpdateManaText()
+    {
+        manaText.text = $"Mana = {GetCurrentMana()}/{GetMaxMana()}";
+        manaText2.text = $"Mana: {GetCurrentMana()} / {GetMaxMana()}";
     }
 
     private void Update()
@@ -59,6 +84,12 @@ public class PlayerStats : MonoBehaviour
         // {
         //     StartCoroutine(TakeDamageRepeatedly());
         // }
+
+        // Uncomment the following lines if you want to handle mana regeneration
+        if (!isTakingDamage)
+        {
+            StartCoroutine(RegenerateMana());
+        }
     }
 
     public static float GetCurrentHealthNormalized(float currentHealth, float maxHealth)
@@ -93,6 +124,19 @@ public class PlayerStats : MonoBehaviour
             FindObjectOfType<HealthBar>().UpdateHealthBar(PlayerStats.GetCurrentHealthNormalized(currentHealth, maxHealth));
             UpdateHealthText();
         }
+    }
+
+    public void DecreaseMana(float amount)
+    {
+        currentMana -= amount;
+
+        // Ensure mana doesn't go below zero
+        currentMana = Mathf.Clamp(currentMana, 0f, maxMana);
+
+        UpdateManaText();
+
+        // Trigger the OnManaChanged event
+        OnManaChanged?.Invoke(currentMana, maxMana);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -146,5 +190,27 @@ public class PlayerStats : MonoBehaviour
 
         // Memanggil fungsi UpdateHealthBar dari objek HealthBar
         FindObjectOfType<HealthBar>().UpdateHealthBar(GetCurrentHealthNormalized(currentHealth, maxHealth));
+    }
+
+    public void IncreaseMana(float amount)
+    {
+        currentMana += amount;
+
+        // Ensure mana doesn't exceed the maximum
+        currentMana = Mathf.Clamp(currentMana, 0f, maxMana);
+
+        UpdateManaText();
+
+        // Trigger the OnManaChanged event
+        OnManaChanged?.Invoke(currentMana, maxMana);
+    }
+
+    private IEnumerator RegenerateMana()
+    {
+        while (currentMana < maxMana)
+        {
+            IncreaseMana(manaRegenerationRate * Time.deltaTime);
+            yield return null;
+        }
     }
 }
