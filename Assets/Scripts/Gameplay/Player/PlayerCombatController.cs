@@ -26,8 +26,26 @@ public class PlayerCombatController : MonoBehaviour
     private bool isCooldown; // Track whether cooldown is active
     [SerializeField]
     private float attackCooldown; // Cooldown time after two attacks
+
+    [SerializeField]
+    private GameObject projectilePrefab1; // Projectile for Skill 1
+    [SerializeField]
+    private GameObject projectilePrefab2; // Projectile for Skill 2
+    [SerializeField]
+    private Transform projectileSpawnPoint;
+    [SerializeField]
+    private float projectileForce = 10f;
+    [SerializeField]
+    private float cooldownBetweenSkills = 5f;
+    [SerializeField]
+    private float skill2Cooldown; // Cooldown time for Skill 2
+
+    private bool canUseSkill1 = true;
+    private bool canUseSkill2 = true;
+    private bool isUsingSkill = false;
+
     private const string Attack1DamageKey = "Attack1Damage";
-    
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -41,7 +59,9 @@ public class PlayerCombatController : MonoBehaviour
     {
         CheckCombatInput();
         CheckAttacks();
+        CheckSkills();
     }
+
     public void IncreaseAttack1Damage(float amount)
     {
         attack1Damage += amount;
@@ -87,23 +107,27 @@ public class PlayerCombatController : MonoBehaviour
 
     private void CheckAttacks()
     {
-        if (gotInput)
+        if (!isUsingSkill)
         {
-            // Perform Attack1
-            if (!isAttacking)
+            if (gotInput)
             {
-                gotInput = false;
-                isAttacking = true;
-                isFirstAttack = !isFirstAttack;
-                anim.SetBool("attack1", true);
-                anim.SetBool("firstAttack", isFirstAttack);
-                anim.SetBool("isAttacking", isAttacking);
-                lastAttackTime = Time.time;
-                numberOfAttacks++;
-
-                if (numberOfAttacks >= 2)
+                // Perform Attack1
+                if (!isAttacking)
                 {
-                    StartCoroutine(StartAttackCooldown());
+                    gotInput = false;
+                    isAttacking = true;
+                    canUseSkill1 = false;
+                    isFirstAttack = !isFirstAttack;
+                    anim.SetBool("attack1", true);
+                    anim.SetBool("firstAttack", isFirstAttack);
+                    anim.SetBool("isAttacking", isAttacking);
+                    lastAttackTime = Time.time;
+                    numberOfAttacks++;
+
+                    if (numberOfAttacks >= 2)
+                    {
+                        StartCoroutine(StartAttackCooldown());
+                    }
                 }
             }
         }
@@ -138,6 +162,7 @@ public class PlayerCombatController : MonoBehaviour
     private void FinishAttack1()
     {
         isAttacking = false;
+        canUseSkill1 = true;
         anim.SetBool("isAttacking", isAttacking);
         anim.SetBool("attack1", false);
     }
@@ -174,5 +199,53 @@ public class PlayerCombatController : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         isCooldown = false; // Reset cooldown
         numberOfAttacks = 0; // Reset the number of attacks
+    }
+
+    private void CheckSkills()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && canUseSkill1 && !isUsingSkill)
+        {
+            isUsingSkill = true;
+            anim.SetTrigger("UseSkill");
+            StartCoroutine(StartSkillCooldown(cooldownBetweenSkills));
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && canUseSkill2 && !isUsingSkill)
+        {
+            isUsingSkill = true;
+            anim.SetTrigger("UseSkill2");
+            StartCoroutine(StartSkillCooldown(skill2Cooldown));
+        }
+    }
+
+    public void SpawnProjectile1()
+    {
+        // Spawn projectile for Skill 1
+        GameObject projectile = Instantiate(projectilePrefab1, projectileSpawnPoint.position, Quaternion.identity);
+
+        // Add force to the projectile
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+        if (projectileRb != null)
+        {
+            projectileRb.AddForce(transform.right * projectileForce, ForceMode2D.Impulse);
+        }
+    }
+
+    public void SpawnProjectile2()
+    {
+        // Spawn projectile for Skill 2
+        GameObject projectile = Instantiate(projectilePrefab2, projectileSpawnPoint.position, Quaternion.identity);
+
+        // Add force to the projectile
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+        if (projectileRb != null)
+        {
+            projectileRb.AddForce(transform.right * projectileForce, ForceMode2D.Impulse);
+        }
+    }
+
+    private IEnumerator StartSkillCooldown(float cooldown)
+    {
+        yield return new WaitForSeconds(cooldown);
+        isUsingSkill = false;
     }
 }
