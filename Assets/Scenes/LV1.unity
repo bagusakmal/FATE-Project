@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[F] Berpindah Level'
+  m_text: '[F] Next Level'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 899f97dc973b1d643a48ba7e3be1e03c, type: 2}
   m_sharedMaterial: {fileID: 7610646256160519664, guid: 899f97dc973b1d643a48ba7e3be1e03c, type: 2}
@@ -36070,7 +36070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Temukan Kunci
+  m_text: Find A Key
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 899f97dc973b1d643a48ba7e3be1e03c, type: 2}
   m_sharedMaterial: {fileID: 7610646256160519664, guid: 899f97dc973b1d643a48ba7e3be1e03c, type: 2}
