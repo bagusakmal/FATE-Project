@@ -12,7 +12,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField]
     private GameObject deathChunkParticle, hitParticle, deathBloodParticle;
     [SerializeField]
-    private float manaRegenerationRate = 1f;
+    private float manaRegenerationRate = 0.001f;
     public GameObject pauseMenu;
     public float currentHealth, currentMana;
     private Animator anim;
@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
     private TextMeshProUGUI manaText2;
     public event Action<float, float> OnHealthChanged;
     public event Action<float, float> OnManaChanged;
+    private Coroutine manaRegenerationCoroutine;
 
     public float GetCurrentHealth()
     {
@@ -56,7 +57,7 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        currentMana = maxMana;
+        currentMana = 30f;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
         // Trigger the initialization event
@@ -73,8 +74,8 @@ public class PlayerStats : MonoBehaviour
     }
     private void UpdateManaText()
     {
-        manaText.text = $"Mana = {GetCurrentMana()}/{GetMaxMana()}";
-        manaText2.text = $"Mana: {GetCurrentMana()} / {GetMaxMana()}";
+        manaText.text = $"MP = {GetCurrentMana()}/{GetMaxMana()}";
+        manaText2.text = $"MP: {GetCurrentMana()} / {GetMaxMana()}";
     }
 
     private void Update()
@@ -86,10 +87,10 @@ public class PlayerStats : MonoBehaviour
         // }
 
         // Uncomment the following lines if you want to handle mana regeneration
-        if (!isTakingDamage)
-        {
-            StartCoroutine(RegenerateMana());
-        }
+       if (!isTakingDamage && manaRegenerationCoroutine == null)
+    {
+        manaRegenerationCoroutine = StartCoroutine(RegenerateMana());
+    }
     }
 
     public static float GetCurrentHealthNormalized(float currentHealth, float maxHealth)
@@ -207,10 +208,23 @@ public class PlayerStats : MonoBehaviour
 
     private IEnumerator RegenerateMana()
     {
-        while (currentMana < maxMana)
+    float elapsedTime = 0f;
+    float regenerationInterval = 1f; // 1 minute regeneration interval
+
+    while (currentMana < maxMana)
+    {
+        elapsedTime += Time.deltaTime;
+
+        if (elapsedTime >= regenerationInterval)
         {
-            IncreaseMana(manaRegenerationRate * Time.deltaTime);
-            yield return null;
+            IncreaseMana(1);
+            elapsedTime = 0f; // Reset the timer
         }
+
+        yield return null;
+    }
+
+    // Set the coroutine to null to allow it to be started again in the Update function
+    manaRegenerationCoroutine = null;
     }
 }
