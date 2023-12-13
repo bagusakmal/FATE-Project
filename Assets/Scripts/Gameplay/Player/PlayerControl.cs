@@ -254,6 +254,7 @@ public class PlayerControl : MonoBehaviour
 
         //If we press Crouch button enable crouch 
         if (Input.GetButtonDown("Crouch")){
+            PC.combatEnabled = false;
             CrouchDown();
         }
            
@@ -263,6 +264,7 @@ public class PlayerControl : MonoBehaviour
             if (!hasObstacleAbove && !isAttemptingToJump)
             {
                 CrouchUp();
+                PC.combatEnabled = true;
             }
             
         }

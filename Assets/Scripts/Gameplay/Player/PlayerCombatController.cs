@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCombatController : MonoBehaviour
 {
     [SerializeField]
-    private bool combatEnabled;
+    public bool combatEnabled;
     [SerializeField]
     private float inputTimer, attack1Radius, attack1Damage;
     [SerializeField]
