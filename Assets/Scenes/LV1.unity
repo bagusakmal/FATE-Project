@@ -103567,7 +103567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1598699364
 Transform:
   m_ObjectHideFlags: 0
@@ -121464,7 +121464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 75402008620909747, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4993436220870558399, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: manaText

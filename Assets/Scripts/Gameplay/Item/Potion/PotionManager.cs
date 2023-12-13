@@ -130,7 +130,10 @@ public class PotionManager : MonoBehaviour
         if (currentManaPotionCount > 0)
         {
             // Gunakan manaPotion dan tambahkan logika peningkatan Mana di sini
-            Debug.Log("Menggunakan Mana Potion");
+            if (playerStats != null)
+            {
+                playerStats.IncreaseMana(healingAmount);
+            }
 
             // Kurangi jumlah manaPotion yang dimiliki
             currentManaPotionCount--;
