@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 using System.Collections.Generic;
 
 public class ListItem : MonoBehaviour
@@ -17,10 +18,14 @@ public class ListItem : MonoBehaviour
     public Sprite defaultImage;
 
     public Image[] itemImages;
+    public Canvas infoCanvas;
+    public Image infoImage;
+    public TextMeshProUGUI infoNameText;
+    public TextMeshProUGUI infoDescriptionText;
 
     public List<int> collectedItems = new List<int>();
 
-    void Start()
+    private void Start()
     {
         LoadCollectedItems();
 
@@ -59,7 +64,26 @@ public class ListItem : MonoBehaviour
             collectedItems.Add(itemIndex);
             SaveCollectedItems();
             DisplayCollectedItems();
+            DisplayItemInfo(itemIndex);
         }
+    }
+
+    private void DisplayItemInfo(int itemIndex)
+    {
+        infoImage.sprite = itemList[itemIndex].img;
+        infoNameText.text = itemList[itemIndex].itemName;
+        infoDescriptionText.text = itemList[itemIndex].itemDescription;
+
+        infoCanvas.gameObject.SetActive(true);
+
+        StartCoroutine(HideItemInfo());
+    }
+
+    private IEnumerator HideItemInfo()
+    {
+        yield return new WaitForSeconds(3f);
+
+        infoCanvas.gameObject.SetActive(false);
     }
 
     public void DeleteAllItems()

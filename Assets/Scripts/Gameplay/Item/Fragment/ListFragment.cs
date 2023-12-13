@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
+using TMPro;
 
 public class ListFragment : MonoBehaviour
 {
@@ -19,6 +21,11 @@ public class ListFragment : MonoBehaviour
     public Image[] itemImages;
     public List<int> collectedItems = new List<int>();
     public PlayerStats playerStats; // Add reference to PlayerStats
+    public Canvas itemInfoCanvas; 
+    public Image itemInfoImage;   
+    public TextMeshProUGUI itemNameText;
+    public TextMeshProUGUI itemDescriptionText; 
+    
 
     void Start()
     {
@@ -100,17 +107,6 @@ public class ListFragment : MonoBehaviour
         }
     }
 
-    public void AddItemToCollectedList(int itemIndex)
-    {
-        if (!collectedItems.Contains(itemIndex))
-        {
-            collectedItems.Add(itemIndex);
-            SaveCollectedItems();
-            DisplayCollectedItems();
-            ApplyItemEffect(itemIndex); // Apply item effect when added to the list
-        }
-    }
-
     public void DeleteAllItems()
     {
         collectedItems.Clear();
@@ -140,4 +136,35 @@ public class ListFragment : MonoBehaviour
     {
         return collectedItems.Contains(itemIndex);
     }
+
+    public void AddItemToCollectedList(int itemIndex)
+    {
+        if (!collectedItems.Contains(itemIndex))
+        {
+            collectedItems.Add(itemIndex);
+            SaveCollectedItems();
+            DisplayCollectedItems();
+            ApplyItemEffect(itemIndex);
+
+            StartCoroutine(ShowItemInfoForDuration(itemIndex, 3f));
+        }
+    }
+
+    IEnumerator ShowItemInfoForDuration(int itemIndex, float duration)
+    {
+        if (itemIndex >= 0 && itemIndex < itemList.Length)
+        {
+            itemInfoImage.sprite = itemList[itemIndex].img;
+            itemNameText.text = itemList[itemIndex].itemName;
+            itemDescriptionText.text = itemList[itemIndex].itemDescription;
+        }
+
+        itemInfoCanvas.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(duration);
+
+        itemInfoCanvas.gameObject.SetActive(false);
+    }
+
+
 }

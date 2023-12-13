@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PotionManager : MonoBehaviour
 {
@@ -15,6 +16,17 @@ public class PotionManager : MonoBehaviour
 
     // Reference to the PlayerStats script
     private PlayerStats playerStats;
+    public Canvas potionInfoCanvas;
+    public Image potionInfoImage;
+    public TextMeshProUGUI potionInfoName;
+    public TextMeshProUGUI potionInfoDescription;
+    public float potionInfoDisplayTime = 3f;
+
+    public Sprite hpPotionSprite;
+    public Sprite manaPotionSprite;
+
+    private Coroutine potionInfoCoroutine;
+
 
     void Start()
     {
@@ -164,6 +176,9 @@ public class PotionManager : MonoBehaviour
             // Update the UI text
             UpdatePotionCountText();
 
+            // Display potion info
+            DisplayPotionInfo("HpPotion", "HP Potion", "Restores health.");
+
             return true; // Successfully collected HP potion
         }
         else
@@ -187,12 +202,57 @@ public class PotionManager : MonoBehaviour
             // Update the UI text
             UpdatePotionCountText();
 
+            // Display potion info
+            DisplayPotionInfo("ManaPotion", "Mana Potion", "Restores mana.");
+
             return true; // Successfully collected HP potion
         }
         else
         {
-            Debug.Log("Inventory for HP potions is full!");
-            return false; // Unable to collect HP potion
+            Debug.Log("Inventory for Mana potions is full!");
+            return false; // Unable to collect Mana potion
         }
+    }
+
+    private void DisplayPotionInfo(string potionType, string potionName, string potionDescription)
+    {
+        // Load sprite dynamically based on potion type
+        Sprite potionSprite = GetPotionSprite(potionType);
+        if (potionSprite != null)
+        {
+            // Set potion info UI elements
+            potionInfoImage.sprite = potionSprite;
+            potionInfoName.text = potionName;
+            potionInfoDescription.text = potionDescription;
+
+            // Show potion info canvas
+            potionInfoCanvas.gameObject.SetActive(true);
+
+            // Start coroutine to hide potion info after a delay
+            if (potionInfoCoroutine != null)
+            {
+                StopCoroutine(potionInfoCoroutine);
+            }
+            potionInfoCoroutine = StartCoroutine(HidePotionInfo());
+        }
+        else
+        {
+            Debug.LogError($"Failed to load sprite for {potionType}.");
+        }
+    }
+
+    private Sprite GetPotionSprite(string potionType)
+    {
+        // Return the appropriate sprite based on potion type
+        return potionType.ToLower() == "hppotion" ? hpPotionSprite : manaPotionSprite;
+    }
+
+    private IEnumerator HidePotionInfo()
+    {
+        // Wait for the specified display time
+        yield return new WaitForSeconds(potionInfoDisplayTime);
+
+        // Hide potion info canvas
+        potionInfoCanvas.gameObject.SetActive(false);
     }
 }
