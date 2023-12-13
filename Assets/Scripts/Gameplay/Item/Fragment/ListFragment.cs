@@ -81,24 +81,22 @@ public class ListFragment : MonoBehaviour
                 {
                     playerCombatController.IncreaseAttack1Damage(10f);
                 }
-                else
-                {
-                    Debug.LogError("PlayerCombatController is not assigned in ListFragment.");
-                }
                 break;
             case 3:
                 if (playerCombatController != null)
                 {
                     playerCombatController.IncreaseAttack1Damage(10f);
                 }
-                else
-                {
-                    Debug.LogError("PlayerCombatController is not assigned in ListFragment.");
-                }
                 break;
-            // Add other cases as needed
-            default:
-                break;
+            case 4:
+                playerStats.IncreaseMaxMana(10f);
+            break;
+             case 5:
+                playerStats.IncreaseMaxMana(10f);
+            break;
+        // Add other cases as needed
+        default:
+            break;
         }
     }
 
