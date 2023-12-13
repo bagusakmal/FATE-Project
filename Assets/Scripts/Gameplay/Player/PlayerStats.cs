@@ -57,7 +57,7 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        maxMana = PlayerPrefs.GetFloat("MaxMana", maxMana);
+        // maxMana = PlayerPrefs.GetFloat("MaxMana", maxMana);
         currentMana = 30f;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
@@ -232,9 +232,9 @@ public class PlayerStats : MonoBehaviour
     {
         maxMana += amount;
 
-        // Save the modified maxMana value to PlayerPrefs
-        PlayerPrefs.SetFloat("MaxMana", maxMana);
-        PlayerPrefs.Save();
+        // // Save the modified maxMana value to PlayerPrefs
+        // PlayerPrefs.SetFloat("MaxMana", maxMana);
+        // PlayerPrefs.Save();
 
         // Ensure current mana doesn't exceed the new maximum
         currentMana = Mathf.Clamp(currentMana, 0f, maxMana);
