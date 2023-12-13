@@ -194,12 +194,24 @@ public class PlayerControl : MonoBehaviour
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("isCrouching", isCrouching);
         anim.SetBool("knockback", knockback);
+        anim.SetBool("crouchWalk", isWalking && isCrouching);
         // anim.SetBool("isWallSliding", isWallSliding);
     }
 
      private void CheckInput()
     {
         movementInputDirection = Input.GetAxisRaw("Horizontal");
+
+        if (isCrouching && movementInputDirection != 0)
+        {
+            // Set the walking flag to true for crouch walking
+            isWalking = true;
+        }
+        else
+        {
+            // Check if the player is walking based on horizontal velocity
+            isWalking = Mathf.Abs(rb.velocity.x) >= 0.01f;
+        }
 
         if (Input.GetButtonDown("Jump") && !isCrouching && !PC.isAttacking)
         {
@@ -243,7 +255,6 @@ public class PlayerControl : MonoBehaviour
         //If we press Crouch button enable crouch 
         if (Input.GetButtonDown("Crouch")){
             CrouchDown();
-            
         }
            
         //Otherwise disable it
@@ -327,7 +338,14 @@ private void CheckJump()
 
         if(canMove && !knockback)
         {
-            rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
+            if (isCrouching)
+            {
+                rb.velocity = new Vector2(movementSpeed * movementInputDirection * crouchSpeed, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
+            }
         }
     
     }
