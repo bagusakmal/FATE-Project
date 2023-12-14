@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1058592603325360361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1608495043253991560}
+  m_Layer: 0
+  m_Name: bulletPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1608495043253991560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058592603325360361}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.25, y: 0.21, z: 0.00954042}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8720060816413959127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1155510708423298539
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +143,7 @@ GameObject:
   - component: {fileID: 8828046692322883200}
   - component: {fileID: 7893399007656805066}
   - component: {fileID: 4993436220870558399}
+  - component: {fileID: 2671411299636315453}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -135,6 +167,7 @@ Transform:
   - {fileID: 5901571737024119644}
   - {fileID: 4856116933180406570}
   - {fileID: 4798117814911154023}
+  - {fileID: 1608495043253991560}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9079916686701296775
@@ -397,6 +430,7 @@ MonoBehaviour:
     m_Bits: 128
   standingCollider: {fileID: 4845999825103546067}
   crouchingCollider: {fileID: 75402008620909747}
+  isUsingSkill: 0
 --- !u!114 &7893399007656805066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +454,14 @@ MonoBehaviour:
     m_Bits: 256
   isAttacking: 0
   attackCooldown: 1
+  projectilePrefab1: {fileID: 8860056977841305791, guid: aa677639dcedd564d8768f407624c8c5, type: 3}
+  projectilePrefab2: {fileID: 1128352064363805914, guid: 6a97ede8b21fda742a09dd59bcfe6873, type: 3}
+  projectileSpawnPoint: {fileID: 1608495043253991560}
+  projectileForce: 10
+  cooldownBetweenSkills: 5
+  skill2Cooldown: 1
+  projectileSpeed: 10
+  projectileMaxTravelDistance: 50
 --- !u!114 &4993436220870558399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,11 +474,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11a47b60a9e4b84282d6d99802b21cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 50
+  maxMana: 50
   deathChunkParticle: {fileID: 0}
   hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
   deathBloodParticle: {fileID: 0}
   pauseMenu: {fileID: 0}
   currentHealth: 0
+  currentMana: 0
   damageAmount: 2
   damageInterval: 5
   healthText: {fileID: 0}
+  healthText2: {fileID: 0}
+  manaText: {fileID: 0}
+  manaText2: {fileID: 0}
+--- !u!114 &2671411299636315453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564862756194955705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b6feb13e59421741be1ad66e8a33561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCombatController: {fileID: 7893399007656805066}
+  damageText: {fileID: 0}

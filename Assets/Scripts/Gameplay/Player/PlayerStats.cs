@@ -11,8 +11,6 @@ public class PlayerStats : MonoBehaviour
     public float maxHealth = 50f, maxMana = 50f;
     [SerializeField]
     private GameObject deathChunkParticle, hitParticle, deathBloodParticle;
-    [SerializeField]
-    private float manaRegenerationRate = 0.001f;
     public GameObject pauseMenu;
     public float currentHealth, currentMana;
     private Animator anim;
@@ -58,7 +56,7 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth = maxHealth;
         // maxMana = PlayerPrefs.GetFloat("MaxMana", maxMana);
-        currentMana = 30f;
+        currentMana = maxMana;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
         // Trigger the initialization event
