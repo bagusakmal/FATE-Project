@@ -21308,6 +21308,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1590314858}
+  - {fileID: 466152437}
   - {fileID: 1076340267}
   m_Father: {fileID: 1601883336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25551,7 +25553,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1666523662}
-        m_TargetAssemblyTypeName: PopUpLoad, Assembly-CSharp
+        m_TargetAssemblyTypeName: PopUpSave, Assembly-CSharp
         m_MethodName: HidePopup
         m_Mode: 1
         m_Arguments:
@@ -25886,11 +25888,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1731726440}
+  m_Father: {fileID: 134408278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 643.34375, y: -43.60251}
+  m_AnchoredPosition: {x: -101, y: -304}
   m_SizeDelta: {x: 318.8219, y: 57.3483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466152438
@@ -37525,7 +37527,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1666523662}
-        m_TargetAssemblyTypeName: PopUpLoad, Assembly-CSharp
+        m_TargetAssemblyTypeName: PopUpSave, Assembly-CSharp
         m_MethodName: ShowPopup
         m_Mode: 1
         m_Arguments:
@@ -39291,7 +39293,6 @@ RectTransform:
   m_Children:
   - {fileID: 414002000}
   - {fileID: 324960063}
-  - {fileID: 1731726440}
   m_Father: {fileID: 134408278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -106060,11 +106061,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1731726440}
+  m_Father: {fileID: 134408278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 643.34375, y: -116.9725}
+  m_AnchoredPosition: {x: -101, y: -377.37}
   m_SizeDelta: {x: 910.3828, y: 89.399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590314859
@@ -106624,6 +106625,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1731726440}
   - {fileID: 2140493203}
   - {fileID: 134408278}
   - {fileID: 1303452816}
@@ -107951,8 +107953,8 @@ GameObject:
   - component: {fileID: 1666523659}
   - component: {fileID: 1666523658}
   - component: {fileID: 1666523660}
-  - component: {fileID: 1666523662}
   - component: {fileID: 1666523661}
+  - component: {fileID: 1666523662}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: GameController
@@ -108232,7 +108234,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1666523645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac70cb856da0af48be55e5ed80a6abb, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba22360b3f909b4091f08eb92110bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   popupMenu: {fileID: 1593351346}
@@ -108957,14 +108959,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 466152437}
-  - {fileID: 1590314858}
-  m_Father: {fileID: 1076340267}
+  m_Children: []
+  m_Father: {fileID: 1601883336}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152.11874, y: -291.00677}
+  m_AnchoredPosition: {x: -149.49374, y: -300.8625}
   m_SizeDelta: {x: 1289.7, y: 180.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1731726441
@@ -111017,13 +111017,13 @@ RectTransform:
   - {fileID: 595161521}
   - {fileID: 1601883336}
   - {fileID: 103358108}
-  - {fileID: 1165926913}
-  - {fileID: 552215820}
-  - {fileID: 532638821}
   - {fileID: 1246112750}
   - {fileID: 2076399206}
   - {fileID: 289536652}
   - {fileID: 80454625}
+  - {fileID: 1165926913}
+  - {fileID: 552215820}
+  - {fileID: 532638821}
   m_Father: {fileID: 936011578}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
