@@ -36,9 +36,12 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField]
     private float projectileForce = 10f;
     [SerializeField]
-    private float cooldownBetweenSkills = 5f;
+    private float cooldownBetweenSkills = 1f;
     [SerializeField]
     private float skill2Cooldown; // Cooldown time for Skill 2
+
+    public float projectileSpeed = 10f;
+    public float projectileMaxTravelDistance;
 
     private bool canUseSkill1 = true;
     private bool canUseSkill2 = true;
@@ -70,8 +73,8 @@ public class PlayerCombatController : MonoBehaviour
 
     private void SaveAttack1Damage()
     {
-        PlayerPrefs.SetFloat(Attack1DamageKey, attack1Damage);
-        PlayerPrefs.Save();
+        // PlayerPrefs.SetFloat(Attack1DamageKey, attack1Damage);
+        // PlayerPrefs.Save();
     }
 
     private void LoadAttack1Damage()
@@ -203,49 +206,93 @@ public class PlayerCombatController : MonoBehaviour
 
     private void CheckSkills()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && canUseSkill1 && !isUsingSkill)
-        {
-            isUsingSkill = true;
-            anim.SetTrigger("UseSkill");
-            StartCoroutine(StartSkillCooldown(cooldownBetweenSkills));
+        if(PS.currentMana >= projectileForce && !isAttacking){
+            if(!PC.isWalking && PC.isGrounded){
+            if (Input.GetKeyDown(KeyCode.Q) && canUseSkill1 && !isUsingSkill)
+            {
+                PC.isUsingSkill = true;
+                isUsingSkill = true;
+                anim.SetTrigger("UseSkill");
+                StartCoroutine(StartSkillCooldown(skill2Cooldown));
+            }
+            if (Input.GetKeyDown(KeyCode.E) && canUseSkill2 && !isUsingSkill)
+            {
+                PC.isUsingSkill = true;
+                isUsingSkill=true;
+                anim.SetTrigger("UseSkill2");
+                StartCoroutine(StartSkillCooldown(skill2Cooldown));
+            }
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.E) && canUseSkill2 && !isUsingSkill)
-        {
-            isUsingSkill = true;
-            anim.SetTrigger("UseSkill2");
-            StartCoroutine(StartSkillCooldown(skill2Cooldown));
-        }
+        
     }
 
-    public void SpawnProjectile1()
+    private void triggerAttack(){
+        SpawnProjectile1();
+        PS.DecreaseMana(projectileForce);
+        // PC.isUsingSkill = false;
+    }
+
+    private void triggerAttack2(){
+        SpawnProjectile2();
+        PS.DecreaseMana(projectileForce);
+        // PC.isUsingSkill = false;
+    }
+
+    private void enablemove () {
+        PC.isUsingSkill = false;
+        
+    }
+
+    private void SpawnProjectile1()
+{
+    Debug.Log("Spawning Projectile1");
+    projectileMaxTravelDistance = 1000;
+    // Spawn projectile for Skill 1
+    GameObject projectile = Instantiate(projectilePrefab1, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+    attackDetails.damageAmount = attack1Damage;
+
+    // Add force to the projectile
+    PrijectilePlayer projectileRb = projectile.GetComponent<PrijectilePlayer>();
+    
+    if (projectileRb != null)
     {
-        // Spawn projectile for Skill 1
-        GameObject projectile = Instantiate(projectilePrefab1, projectileSpawnPoint.position, Quaternion.identity);
-
-        // Add force to the projectile
-        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
-        if (projectileRb != null)
-        {
-            projectileRb.AddForce(transform.right * projectileForce, ForceMode2D.Impulse);
-        }
+        Debug.Log("Projectile Active");
+        projectileRb.SetProjectileParameters(projectileSpeed, projectileMaxTravelDistance, attack1Damage);
     }
+    else
+    {
+        Debug.LogError("PrijectilePlayer script not found on the projectile");
+    }
+}
+
 
     public void SpawnProjectile2()
     {
+        Debug.Log("Spawning Projectile1");
+        projectileMaxTravelDistance = 1000;
         // Spawn projectile for Skill 2
-        GameObject projectile = Instantiate(projectilePrefab2, projectileSpawnPoint.position, Quaternion.identity);
+        GameObject projectile = Instantiate(projectilePrefab2, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        attackDetails.damageAmount = attack1Damage;
 
         // Add force to the projectile
-        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+        PrijectilePlayer projectileRb = projectile.GetComponent<PrijectilePlayer>();
+    
         if (projectileRb != null)
         {
-            projectileRb.AddForce(transform.right * projectileForce, ForceMode2D.Impulse);
+            Debug.Log("Projectile Active");
+            projectileRb.SetProjectileParameters(projectileSpeed, projectileMaxTravelDistance, attack1Damage);
+        }
+        else
+        {
+            Debug.LogError("PrijectilePlayer script not found on the projectile");
         }
     }
 
     private IEnumerator StartSkillCooldown(float cooldown)
     {
         yield return new WaitForSeconds(cooldown);
+        PC.isUsingSkill = false;
         isUsingSkill = false;
     }
 }

@@ -19,8 +19,8 @@ public class PlayerControl : MonoBehaviour
     private int facingDirection = 1;
 
     private bool isFacingRight = true;
-    private bool isWalking;
-    private bool isGrounded;
+    public bool isWalking;
+    public bool isGrounded;
     // private bool isTouchingWall;
     // private bool isWallSliding;
     private bool canNormalJump;
@@ -77,6 +77,7 @@ public class PlayerControl : MonoBehaviour
     public Collider2D standingCollider,crouchingCollider;
 
     private PlayerCombatController PC;
+    public bool isUsingSkill = false;
 
 
 
@@ -92,6 +93,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!isUsingSkill){
         CheckInput();
         CheckMovementDirection();
         UpdateAnimations();
@@ -100,7 +102,9 @@ public class PlayerControl : MonoBehaviour
         CheckJump();
         // CheckLedgeClimb();
         CheckDash();
-        CheckKnockback();
+        CheckKnockback();   
+        }
+        
         
     }
     
@@ -246,14 +250,14 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetButtonDown("Dash") && isGrounded && !isCrouching)
         {
             // Tambahkan kondisi untuk memastikan pemain tidak dapat dash saat melompat
-            if (Time.time >= (lastDash + dashCoolDown))
+            if (Time.time >= (lastDash + dashCoolDown) && !isUsingSkill)
             {
                 AttemptToDash();
             }
         }
 
         //If we press Crouch button enable crouch 
-        if (Input.GetButtonDown("Crouch")){
+        if (Input.GetButtonDown("Crouch") && !isUsingSkill){
             PC.combatEnabled = false;
             CrouchDown();
         }

@@ -40096,11 +40096,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1128846166 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7564862756194955705, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
-  m_PrefabInstance: {fileID: 929763718108038973}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1132567812
 GameObject:
   m_ObjectHideFlags: 0
@@ -41836,7 +41831,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4993436220870558399, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
   m_PrefabInstance: {fileID: 929763718108038973}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128846166}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d11a47b60a9e4b84282d6d99802b21cd, type: 3}
@@ -41847,26 +41842,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7893399007656805066, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
   m_PrefabInstance: {fileID: 929763718108038973}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128846166}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e39f81628aa08f24e9ff357a81d36f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1184600867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128846166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6feb13e59421741be1ad66e8a33561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCombatController: {fileID: 1184600858}
-  damageText: {fileID: 1165926914}
 --- !u!4 &1185694644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1434017384610956979, guid: 610672f4355971f468365191b285a966, type: 3}
@@ -124378,10 +124359,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 75402008620909747, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 1608495043253991560, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.39
       objectReference: {fileID: 0}
+    - target: {fileID: 1608495043253991560, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671411299636315453, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: damageText
+      value: 
+      objectReference: {fileID: 1165926914}
     - target: {fileID: 4993436220870558399, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: manaText
       value: 
@@ -124391,10 +124380,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 741762131}
     - target: {fileID: 4993436220870558399, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4993436220870558399, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 532638822}
@@ -124402,22 +124387,14 @@ PrefabInstance:
       propertyPath: healthText2
       value: 
       objectReference: {fileID: 1380879373}
-    - target: {fileID: 4993436220870558399, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
-      propertyPath: hitParticle
-      value: 
-      objectReference: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
     - target: {fileID: 7564862756194955705, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7893399007656805066, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
-      propertyPath: attack1Damage
-      value: 10
+      propertyPath: skill2Cooldown
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7893399007656805066, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
-      propertyPath: attack1DamageText
-      value: 
-      objectReference: {fileID: 1165926914}
     - target: {fileID: 8720060816413959127, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: m_LocalPosition.x
       value: -103.92
@@ -124458,17 +124435,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8828046692322883200, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
-      propertyPath: groundCheckRadius
-      value: 1.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7564862756194955705, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1184600867}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
 --- !u!1001 &2420117368803503058
 PrefabInstance:
