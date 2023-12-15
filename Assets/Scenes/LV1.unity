@@ -39888,6 +39888,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096487967}
   m_CullTransparentMesh: 1
+--- !u!82 &1109691869 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1451368106875257572, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+  m_PrefabInstance: {fileID: 929763718108038973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1109723698 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5220262514145475949, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+  m_PrefabInstance: {fileID: 929763718108038973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1111854661
 GameObject:
   m_ObjectHideFlags: 0
@@ -109566,6 +109576,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783551683}
   m_CullTransparentMesh: 1
+--- !u!82 &1786762095 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5002929372549861005, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+  m_PrefabInstance: {fileID: 929763718108038973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1795114469
 GameObject:
   m_ObjectHideFlags: 0
@@ -124413,14 +124428,30 @@ PrefabInstance:
       propertyPath: healthText2
       value: 
       objectReference: {fileID: 1380879373}
+    - target: {fileID: 5002929372549861005, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002929372549861005, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a7fed7d8eacef442a45555d0434e732, type: 3}
     - target: {fileID: 7564862756194955705, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7893399007656805066, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: attackSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a7fed7d8eacef442a45555d0434e732, type: 3}
+    - target: {fileID: 7893399007656805066, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: skill2Cooldown
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7893399007656805066, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: attackAudioSource
+      value: 
+      objectReference: {fileID: 1786762095}
     - target: {fileID: 8720060816413959127, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
       propertyPath: m_LocalPosition.x
       value: -103.92
@@ -124461,6 +124492,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8828046692322883200, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: dashSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: ebbecce4e5c5f1640ba8c0b8f730e3d6, type: 3}
+    - target: {fileID: 8828046692322883200, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: walkingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 398a631f92a5b2e4fbbf36e67e05e653, type: 3}
+    - target: {fileID: 8828046692322883200, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: dashAudioSource
+      value: 
+      objectReference: {fileID: 1109723698}
+    - target: {fileID: 8828046692322883200, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
+      propertyPath: walkingAudioSource
+      value: 
+      objectReference: {fileID: 1109691869}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

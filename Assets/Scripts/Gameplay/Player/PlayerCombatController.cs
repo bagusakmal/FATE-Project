@@ -47,6 +47,11 @@ public class PlayerCombatController : MonoBehaviour
     private bool canUseSkill2 = true;
     private bool isUsingSkill = false;
 
+    [SerializeField]
+    private AudioClip attackSFX;
+    private bool isAttackSFXPlaying = false;
+    public AudioSource attackAudioSource;
+
     private const string Attack1DamageKey = "Attack1Damage";
 
     private void Start()
@@ -127,6 +132,11 @@ public class PlayerCombatController : MonoBehaviour
                     lastAttackTime = Time.time;
                     numberOfAttacks++;
 
+                     if (!isAttackSFXPlaying)
+                    {
+                        PlayAttackSFX();
+                    }
+
                     if (numberOfAttacks >= 2)
                     {
                         StartCoroutine(StartAttackCooldown());
@@ -168,6 +178,7 @@ public class PlayerCombatController : MonoBehaviour
         canUseSkill1 = true;
         anim.SetBool("isAttacking", isAttacking);
         anim.SetBool("attack1", false);
+        StopAttackSFX();
     }
 
     private void Damage(AttackDetails attackDetails)
@@ -295,4 +306,18 @@ public class PlayerCombatController : MonoBehaviour
         PC.isUsingSkill = false;
         isUsingSkill = false;
     }
+
+    private void PlayAttackSFX()
+{
+    attackAudioSource.clip = attackSFX;
+    attackAudioSource.Play();
+    isAttackSFXPlaying = true;
+}
+
+private void StopAttackSFX()
+{
+    attackAudioSource.clip = attackSFX;
+    attackAudioSource.Stop();
+    isAttackSFXPlaying = false;
+}
 }

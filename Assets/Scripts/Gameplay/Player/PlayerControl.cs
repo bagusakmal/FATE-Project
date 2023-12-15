@@ -79,6 +79,14 @@ public class PlayerControl : MonoBehaviour
     private PlayerCombatController PC;
     public bool isUsingSkill = false;
 
+    public bool isWalkingSFXPlaying = false;
+    public AudioSource walkingAudioSource;
+    public AudioSource dashAudioSource;
+    public AudioClip walkingSFX;
+    public AudioClip dashSFX;
+    private bool isDashingSFXPlaying = false;
+
+
 
 
     // Start is called before the first frame update
@@ -103,6 +111,35 @@ public class PlayerControl : MonoBehaviour
         // CheckLedgeClimb();
         CheckDash();
         CheckKnockback();   
+
+         // Play walking sound effect
+            if (isWalking && !isDashing &&isGrounded && !isWalkingSFXPlaying)
+            {
+                walkingAudioSource.clip = walkingSFX;
+                walkingAudioSource.Play();
+                isWalkingSFXPlaying = true;
+            }
+            else if (!isWalking && isWalkingSFXPlaying)
+            {
+                walkingAudioSource.Stop();
+                isWalkingSFXPlaying = false;
+            }
+            else if(!isGrounded && isWalkingSFXPlaying)
+            {
+                walkingAudioSource.Stop();
+                isWalkingSFXPlaying = false;
+            }
+            // else if (isDashing && !isWalking &&!isWalkingSFXPlaying && !isDashingSFXPlaying){
+            //     walkingAudioSource.clip = walkingSFX;
+            //     walkingAudioSource.Stop();
+            //     isWalkingSFXPlaying = false;
+
+            // }
+            // else if (!isDashing && isWalking){
+            //     walkingAudioSource.clip = walkingSFX;
+            //     walkingAudioSource.Play();
+            //     isWalkingSFXPlaying = true;
+            // }
         }
         
         
@@ -306,6 +343,15 @@ public class PlayerControl : MonoBehaviour
                     PlayerAfterImagePool.Instance.GetFromPool();
                     lastImageXpos = transform.position.x;
                 }
+                // Play dash sound effect
+                if (!isDashingSFXPlaying)
+                {
+                    dashAudioSource.clip = dashSFX;
+                    dashAudioSource.Play();
+                    isDashingSFXPlaying = true;
+                    walkingAudioSource.Stop();
+                    isWalkingSFXPlaying = false;
+                }
             }
 
             if(dashTimeLeft <= 0 )
@@ -314,6 +360,10 @@ public class PlayerControl : MonoBehaviour
                 canMove = true;
                 canFlip = true;
                 isAttemptingToJump = false; // Tambahkan baris ini
+
+                 // Stop dash sound effect
+                dashAudioSource.Stop();
+                isDashingSFXPlaying = false;
             }
             
         }
