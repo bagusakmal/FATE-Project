@@ -52,6 +52,11 @@ public class PlayerCombatController : MonoBehaviour
     private bool isAttackSFXPlaying = false;
     public AudioSource attackAudioSource;
 
+     [SerializeField]
+    private AudioClip skillSFX;
+    private bool isSkillSFXPlaying = false;
+    public AudioSource skillAudioSource;
+
     private const string Attack1DamageKey = "Attack1Damage";
 
     private void Start()
@@ -308,16 +313,30 @@ public class PlayerCombatController : MonoBehaviour
     }
 
     private void PlayAttackSFX()
-{
-    attackAudioSource.clip = attackSFX;
-    attackAudioSource.Play();
-    isAttackSFXPlaying = true;
-}
+    {
+        attackAudioSource.clip = attackSFX;
+        attackAudioSource.Play();
+        isAttackSFXPlaying = true;
+    }
 
-private void StopAttackSFX()
-{
-    attackAudioSource.clip = attackSFX;
-    attackAudioSource.Stop();
-    isAttackSFXPlaying = false;
-}
+    private void StopAttackSFX()
+    {
+        attackAudioSource.clip = attackSFX;
+        attackAudioSource.Stop();
+        isAttackSFXPlaying = false;
+    }
+
+    private void PlaySkillSFX()
+    {
+        skillAudioSource.clip = skillSFX;
+        skillAudioSource.Play();
+        isSkillSFXPlaying = true;
+    }
+
+    private void StopSkillSFX()
+    {
+        skillAudioSource.clip = skillSFX;
+        skillAudioSource.Stop();
+        isSkillSFXPlaying = false;
+    }
 }
