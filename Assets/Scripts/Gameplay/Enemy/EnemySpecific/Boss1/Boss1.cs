@@ -54,7 +54,7 @@ public class Boss1 : Entity
         deadState = new B1_DeadState(this, stateMachine, "dead", deadStateData, this);
         // chaseState = new B1_ChaseState(this, stateMachine, "chase", playerTransform, chaseSpeed);
 
-        stateMachine.Initialize(moveState);
+        stateMachine.Initialize(idleState);
        
     }
 
@@ -63,7 +63,8 @@ public class Boss1 : Entity
         base.OnDrawGizmos();
 
         Gizmos.DrawWireSphere(meleeAttackPosition.position, meleeAttackStateData.attackRadius);
-
+        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.minAgroDistance), 0.2f);
+        Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.left * entityData.minAgroDistance), 0.2f);
         // Draw a wire sphere around the OverlapCircle area for visual representation
         Gizmos.DrawWireSphere(playerCheck.position, entityData.minAgroDistance);
 
