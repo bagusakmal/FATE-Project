@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4062ef0ec48c9249b1fc094cd1ae593, type: 3}
-  m_Name: Boss1_BaseData
+  m_Name: SK1_BaseData
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 50
   damageHopSpeed: 3
   wallCheckDistance: 2
   ledgeCheckDistance: 2
@@ -21,7 +21,7 @@ MonoBehaviour:
   maxAgroDistance: 100
   stunResistance: 100
   stunRecoveryTime: 2
-  closeRangeActionDistance: 17
+  closeRangeActionDistance: 5.5
   hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
   whatIsGround:
     serializedVersion: 2
