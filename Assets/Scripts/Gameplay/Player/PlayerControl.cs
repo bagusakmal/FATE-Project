@@ -112,23 +112,23 @@ public class PlayerControl : MonoBehaviour
         CheckDash();
         CheckKnockback();   
 
-         // Play walking sound effect
-            if (isWalking && !isDashing &&isGrounded && !isWalkingSFXPlaying)
-            {
-                walkingAudioSource.clip = walkingSFX;
-                walkingAudioSource.Play();
-                isWalkingSFXPlaying = true;
-            }
-            else if (!isWalking && isWalkingSFXPlaying)
-            {
-                walkingAudioSource.Stop();
-                isWalkingSFXPlaying = false;
-            }
-            else if(!isGrounded && isWalkingSFXPlaying)
-            {
-                walkingAudioSource.Stop();
-                isWalkingSFXPlaying = false;
-            }
+        //  // Play walking sound effect
+        //     if (isWalking && !isDashing &&isGrounded && !isWalkingSFXPlaying)
+        //     {
+        //         walkingAudioSource.clip = walkingSFX;
+        //         walkingAudioSource.Play();
+        //         isWalkingSFXPlaying = true;
+        //     }
+        //     else if (!isWalking && isWalkingSFXPlaying)
+        //     {
+        //         walkingAudioSource.Stop();
+        //         isWalkingSFXPlaying = false;
+        //     }
+        //     else if(!isGrounded && isWalkingSFXPlaying)
+        //     {
+        //         walkingAudioSource.Stop();
+        //         isWalkingSFXPlaying = false;
+        //     }
             // else if (isDashing && !isWalking &&!isWalkingSFXPlaying && !isDashingSFXPlaying){
             //     walkingAudioSource.clip = walkingSFX;
             //     walkingAudioSource.Stop();
@@ -143,6 +143,18 @@ public class PlayerControl : MonoBehaviour
         }
         
         
+    }
+
+    private void PlayWalkSFX(){
+        walkingAudioSource.clip = walkingSFX;
+        walkingAudioSource.Play();
+        isWalkingSFXPlaying = true;
+    }
+
+    private void StopWalkSFX(){
+        walkingAudioSource.clip = walkingSFX;
+        walkingAudioSource.Stop();
+        isWalkingSFXPlaying = false;
     }
     
     private void FixedUpdate() 

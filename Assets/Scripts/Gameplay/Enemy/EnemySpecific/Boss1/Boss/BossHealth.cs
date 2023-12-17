@@ -7,24 +7,28 @@ public class BossHealth : MonoBehaviour
     public float health = 500;
 
 	public GameObject deathEffect;
+	public GameObject hitParticle;
 
 	public bool isInvulnerable = false;
 
-    
+    public GameObject Alive;
+
+
 
 	public void Damage(AttackDetails attackDetails)
 	{
-
+        
 		if (isInvulnerable)
 			return;
 
         float damage = attackDetails.damageAmount;
 		health -= damage;
         // stunres -= attackDetails.stunDamageAmount;
+		Instantiate(hitParticle, Alive.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
 
 		if (health <= 200)
 		{
-			GetComponent<Animator>().SetBool("IsEnraged", true);
+			Alive.GetComponent<Animator>().SetBool("IsEnraged", true);
 		}
 
 		if (health <= 0)
@@ -35,7 +39,7 @@ public class BossHealth : MonoBehaviour
 
 	void Die()
 	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
+		Instantiate(deathEffect, transform.position,transform.rotation);
 		Destroy(gameObject);
 	}
 }

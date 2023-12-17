@@ -10,9 +10,10 @@ public class BossWeapon : MonoBehaviour
 	public Vector3 attackOffset;
 	public float attackRange = 1f;
 	public LayerMask attackMask;
-
+    AttackDetails attackDetails;
 	public void Attack()
 	{
+        attackDetails.damageAmount = attackDamage;
 		Vector3 pos = transform.position;
 		pos += transform.right * attackOffset.x;
 		pos += transform.up * attackOffset.y;
@@ -21,7 +22,8 @@ public class BossWeapon : MonoBehaviour
 		Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
 		if (colInfo != null)
 		{
-			colInfo.GetComponent<PlayerStats>().DecreaseHealth(attackDamage);
+			// colInfo.GetComponent<PlayerStats>().DecreaseHealth(attackDamage);
+            colInfo.transform.SendMessage("Damage", attackDetails);
 		}
 	}
 

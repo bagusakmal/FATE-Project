@@ -137,10 +137,10 @@ public class PlayerCombatController : MonoBehaviour
                     lastAttackTime = Time.time;
                     numberOfAttacks++;
 
-                     if (!isAttackSFXPlaying)
-                    {
-                        PlayAttackSFX();
-                    }
+                    //  if (!isAttackSFXPlaying)
+                    // {
+                    //     PlayAttackSFX();
+                    // }
 
                     if (numberOfAttacks >= 2)
                     {
@@ -183,7 +183,7 @@ public class PlayerCombatController : MonoBehaviour
         canUseSkill1 = true;
         anim.SetBool("isAttacking", isAttacking);
         anim.SetBool("attack1", false);
-        StopAttackSFX();
+        // StopAttackSFX();
     }
 
     private void Damage(AttackDetails attackDetails)

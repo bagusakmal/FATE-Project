@@ -15,11 +15,16 @@ public class GameManager : MonoBehaviour
     private float respawnTimeStart;
     private bool respawn;
     private CinemachineVirtualCamera CVC;
+    private PlayerControl PC;
+    private PlayerCombatController PCC;
     public GameObject GameOver;
+    private bool GameOv;
     public const string DestroyedObjectsKey = "DestroyedObjects";
 
     private void Start()
     {
+        PC = playerPrefab.GetComponent<PlayerControl>();
+        PCC = playerPrefab.GetComponent<PlayerCombatController>();
         string destroyedObjectsData = PlayerPrefs.GetString(DestroyedObjectsKey, "");
         string[] destroyedObjectsArray = destroyedObjectsData.Split(',');
 
@@ -48,44 +53,17 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // CheckRespawn();
+        if (GameOv){
+            PC.walkingAudioSource.Stop();
+            PC.dashAudioSource.Stop();
+            PCC.attackAudioSource.Stop();
+        }
     }
-    // public void Respawn()
-    // {
-    //     respawnTimeStart = Time.time;
-    //     respawn = true;
-    // }
-
-    // private void CheckRespawn()
-    // {
-    //     if (Time.time >= respawnTimeStart + respawnTime && respawn)
-    //     {
-    //         RespawnPlayer();
-    //         respawn = false;
-    //     }
-    // }
-    // private void RespawnPlayer()
-    // {
-    //     // Destroy all previous player objects in the scene
-    //     GameObject[] previousPlayers = GameObject.FindGameObjectsWithTag("Player");
-    //     foreach (var previousPlayer in previousPlayers)
-    //     {
-    //         Destroy(previousPlayer);
-    //     }
-
-    //     // Instantiate a new player at the respawn point
-    //     GameObject newPlayer = Instantiate(playerPrefab, respawnPoint.position, respawnPoint.rotation);
-        
-    //     // Set the z position to 0 to ensure it remains at the same depth
-    //     Vector3 respawnPosition = newPlayer.transform.position;
-    //     respawnPosition.z = 0;
-    //     newPlayer.transform.position = respawnPosition;
-
-    //     // Set the Cinemachine Virtual Camera to follow the new player
-    //     CVC.m_Follow = newPlayer.transform;
-    // }
 
     public void gameOver () 
     {
+        
+        GameOv = true;
         Time.timeScale = 0;
         GameOver.SetActive(true);
     }
