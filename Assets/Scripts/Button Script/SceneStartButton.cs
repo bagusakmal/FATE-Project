@@ -10,6 +10,8 @@ public class SceneStartButton : MonoBehaviour
     public GameObject loadingScreen;
     public Slider loadingSlider;
     public TextMeshProUGUI loadingText;
+    public LevelSaveManager levelSaveManager; // Reference to the LevelSaveManager script
+    public GameObject warning;
 
     public float loadingTime = 2.0f;
 
@@ -28,12 +30,10 @@ public class SceneStartButton : MonoBehaviour
 
         while (timer < loadingTime)
         {
-        
             float progress = Mathf.Clamp01(timer / loadingTime);
             loadingSlider.value = progress;
             loadingText.text = "Loading: " + Mathf.Round(progress * 100) + "%";
 
-        
             timer += Time.deltaTime;
 
             yield return null;
@@ -48,6 +48,24 @@ public class SceneStartButton : MonoBehaviour
             loadingText.text = "Loading: " + Mathf.Round(progress * 100) + "%";
 
             yield return null;
+        }
+    }
+
+    public void CheckSaveDataAndLoadScene()
+    {
+        // Check if there is save data in the LevelSaveManager
+        if (levelSaveManager != null && levelSaveManager.HasSaveData())
+        {
+            // Show warning if there is save data
+            if (warning != null)
+            {
+                warning.SetActive(true);
+            }
+        }
+        else
+        {
+            // No save data, proceed to load scene
+            LoadSceneWithLoadingScreen();
         }
     }
 }

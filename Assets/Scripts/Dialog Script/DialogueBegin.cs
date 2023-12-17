@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class DialogManager : MonoBehaviour
+public class DialogueBegin : MonoBehaviour
 {
     public GameObject objectToShow;
 
@@ -30,10 +30,18 @@ public class DialogManager : MonoBehaviour
     public float fadeDuration = 1.0f;  // Set the duration of the fade
     public float delayBeforeFading = 2.0f;  // Set the delay before fading
     private bool allowInput = false;
+    private PlayerControl playerControl;
+    private PlayerCombatController playerCombatController;
+    public GameObject UI;
 
     private void Start()
     {
         StartCoroutine(StartDialog());
+        playerControl = FindObjectOfType<PlayerControl>();
+        playerCombatController = FindObjectOfType<PlayerCombatController>();
+        playerControl.enabled = false;
+        playerCombatController.enabled = false;
+        UI.SetActive(false);
     }
 
     private void Update()
@@ -58,7 +66,7 @@ public class DialogManager : MonoBehaviour
     IEnumerator StartDialog()
     {
         allowInput = false; // Disable input
-        yield return new WaitForSeconds(35f);
+        yield return new WaitForSeconds(1f);
         allowInput = true; // Enable input after the delay
         ShowNextLine();
     }
@@ -146,7 +154,11 @@ public class DialogManager : MonoBehaviour
 
     void CloseDialog()
     {
-        objectToShow.SetActive(true);
+        objectToShow.SetActive(false);
+        playerControl.enabled = true;
+        playerCombatController.enabled = true;
+        UI.SetActive(true);
+        
     }
 
     private bool IsInputAllowed()

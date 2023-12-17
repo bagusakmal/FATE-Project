@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 public class LevelSaveManager : MonoBehaviour
 {
     public TextMeshProUGUI[] levelButtonsText;
     public Image[] levelButtonsImage;
     private List<string>[] savedLevels;
+    public GameObject noSaveNotification;
+    private bool isNoSaveNotificationVisible = false;
+    public Button hideNoSaveButton;
 
     void Start()
     {
@@ -24,28 +28,35 @@ public class LevelSaveManager : MonoBehaviour
 
         // Update teks dan gambar tombol
         UpdateButtonContent();
+
+        // Set up the hide button click event
+        if (hideNoSaveButton != null)
+        {
+            hideNoSaveButton.onClick.AddListener(HideNoSaveNotificationButton);
+            hideNoSaveButton.gameObject.SetActive(false); // Initially hide the hide button
+        }
     }
 
     public void SaveLevel(int buttonIndex)
-{
-    string currentLevel = SceneManager.GetActiveScene().name;
-
-    // Check if the slot already contains a saved level
-    if (savedLevels[buttonIndex].Count > 0)
     {
-        // Remove the old save data for this slot
-        savedLevels[buttonIndex].Clear();
+        string currentLevel = SceneManager.GetActiveScene().name;
+
+        // Check if the slot already contains a saved level
+        if (savedLevels[buttonIndex].Count > 0)
+        {
+            // Remove the old save data for this slot
+            savedLevels[buttonIndex].Clear();
+        }
+
+        // Add the new level to the slot
+        savedLevels[buttonIndex].Add(currentLevel);
+
+        // Save data to PlayerPrefs
+        SaveLevelsToPlayerPrefs();
+
+        // Update button content
+        UpdateButtonContent();
     }
-
-    // Add the new level to the slot
-    savedLevels[buttonIndex].Add(currentLevel);
-
-    // Save data to PlayerPrefs
-    SaveLevelsToPlayerPrefs();
-
-    // Update button content
-    UpdateButtonContent();
-}
 
     private void UpdateButtonContent()
     {
@@ -116,4 +127,86 @@ public class LevelSaveManager : MonoBehaviour
             }
         }
     }
+
+    public void Continue()
+    {
+        // Cari indeks penyimpanan terakhir yang tidak kosong
+        int lastIndex = -1;
+
+        for (int i = 0; i < savedLevels.Length; i++)
+        {
+            if (savedLevels[i].Count > 0)
+            {
+                lastIndex = i;
+            }
+        }
+
+        // Jika ada penyimpanan yang tersedia, load level
+        if (lastIndex != -1)
+        {
+            HideNoSaveNotification(); // Hide the notification if there is a saved game
+            LoadLevel(lastIndex);
+        }
+        else
+        {
+            // Tampilkan pemberitahuan jika tidak ada penyimpanan
+            ShowNoSaveNotification();
+        }
+    }
+
+    // Menampilkan pemberitahuan jika tidak ada penyimpanan
+     private void ShowNoSaveNotification()
+    {
+        if (noSaveNotification != null && !isNoSaveNotificationVisible)
+        {
+            noSaveNotification.SetActive(true);
+            isNoSaveNotificationVisible = true;
+
+            // Show the hide button
+            if (hideNoSaveButton != null)
+            {
+                hideNoSaveButton.gameObject.SetActive(true);
+            }
+        }
+    }
+
+
+    // Menyembunyikan pemberitahuan jika ada penyimpanan
+    private void HideNoSaveNotification()
+    {
+        if (noSaveNotification != null && isNoSaveNotificationVisible)
+        {
+            noSaveNotification.SetActive(false);
+            isNoSaveNotificationVisible = false;
+
+            // Hide the hide button
+            if (hideNoSaveButton != null)
+            {
+                hideNoSaveButton.gameObject.SetActive(false);
+            }
+        }
+    }
+    // Memperbarui tampilan pemberitahuan berdasarkan keberadaan penyimpanan
+    private void UpdateNoSaveNotification()
+    {
+        if (savedLevels.Any(levelList => levelList.Count > 0))
+        {
+            HideNoSaveNotification();
+        }
+        else
+        {
+            ShowNoSaveNotification();
+        }
+    }
+    private void HideNoSaveNotificationButton()
+    {
+        HideNoSaveNotification();
+    }
+    public bool HasSaveData()
+    {
+        // Check if any of the save slots has data
+        return savedLevels.Any(levelList => levelList.Count > 0);
+    }
+
+    
 }

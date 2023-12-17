@@ -41481,7 +41481,7 @@ GameObject:
   - component: {fileID: 1173092514}
   - component: {fileID: 1173092513}
   m_Layer: 5
-  m_Name: HpPotion
+  m_Name: HpPotionCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122093,7 +122093,7 @@ GameObject:
   - component: {fileID: 1978709660}
   - component: {fileID: 1978709659}
   m_Layer: 5
-  m_Name: ManaPotion
+  m_Name: ManaPotionCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

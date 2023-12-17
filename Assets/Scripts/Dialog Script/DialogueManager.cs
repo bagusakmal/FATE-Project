@@ -7,32 +7,65 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public GameObject objectToShow;
-    public GameObject objectToHide;
+
     [System.Serializable]
     public class DialogLine
     {
-        public string characterName; 
-        public string dialogText; 
+        public string characterName;
+        public string dialogText;
     }
 
     public TMP_Text nameText;
-    public TMP_Text dialogText; 
-    public List<DialogLine> dialogLines; 
+    public TMP_Text dialogText;
+    public List<DialogLine> dialogLines;
     public float textSpeed = 0.05f;
-    public Image characterImage; 
-    public Sprite[] characterSprites; 
+    public Image characterImage;
+    public Sprite[] characterSprites;
 
     private int currentLine = 0;
     private bool isTyping = false;
     private bool cancelTyping = false;
+    private bool isPlayerInTrigger = false;
+    private PlayerControl playerControl;
+    private PlayerCombatController playerCombatController;
 
-    private void Start()
+    void Start()
     {
-        StartCoroutine(StartDialog());
+        // Initialize the objects at the beginning
+        objectToShow.SetActive(false);
+        playerControl = FindObjectOfType<PlayerControl>();
+        playerCombatController = FindObjectOfType<PlayerCombatController>();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the entering collider is the player
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInTrigger = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        // Check if the exiting collider is the player
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInTrigger = false;
+        }
     }
 
     private void Update()
     {
+        // Check if the player is in the trigger area and presses 'F' to start the dialogue
+        if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.F))
+        {
+            // Hide the canvas before starting the dialogue
+            objectToShow.SetActive(true);
+
+            StartCoroutine(StartDialog());
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             if (isTyping)
@@ -52,7 +85,9 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator StartDialog()
     {
-        yield return new WaitForSeconds(0.5f);
+        playerControl.enabled = false;
+        playerCombatController.enabled = false;
+        yield return new WaitForSeconds(1f);
         ShowNextLine();
     }
 
@@ -104,8 +139,8 @@ public class DialogueManager : MonoBehaviour
 
     void CloseDialog()
     {
-    objectToShow.SetActive(true);
-    objectToHide.SetActive(false);
+        playerControl.enabled = true;
+        playerCombatController.enabled = true;
+        objectToShow.SetActive(false);
     }
-
 }
