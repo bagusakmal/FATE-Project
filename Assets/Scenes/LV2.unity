@@ -9211,7 +9211,7 @@ GameObject:
   - component: {fileID: 283111759}
   - component: {fileID: 283111758}
   - component: {fileID: 283111757}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gatot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9349,9 +9349,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 84638259
-  m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingLayerID: -1618004891
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 887771279, guid: 237f678b1477ce546a731b8c9c575583, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -123845,7 +123845,6 @@ GameObject:
   - component: {fileID: 2002144781}
   - component: {fileID: 2002144784}
   - component: {fileID: 2002144783}
-  - component: {fileID: 2002144782}
   m_Layer: 5
   m_Name: TextBox
   m_TagString: Untagged
@@ -123876,68 +123875,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3.7166, y: -354.9256}
   m_SizeDelta: {x: 1811.6174, y: 333.036}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2002144782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002144780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 509a1fa8f3865ef4f83bdc6168a5bf4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToShow: {fileID: 65452551}
-  nameText: {fileID: 122670368}
-  dialogText: {fileID: 1104601781}
-  dialogLines:
-  - characterName: Misha
-    dialogText: "ummmhhhg\u2026.. *yawn*"
-  - characterName: Misha
-    dialogText: "ah\u2026 It\u2019s already morning"
-  - characterName: Misha
-    dialogText: "Wait a second\u2026.. Why am I in the forest?"
-  - characterName: Misha
-    dialogText: "arrrghhh\u2026.. "
-  - characterName: Misha
-    dialogText: My head it hurts
-  - characterName: Misha
-    dialogText: ....
-  - characterName: Misha
-    dialogText: "owch\u2026 what is that memory?"
-  - characterName: Misha
-    dialogText: It's all so hazy and random.
-  - characterName: Misha
-    dialogText: ' I should walk around first i guess.'
-  - characterName: Misha
-    dialogText: 'oh is that a soldier on a scout? '
-  - characterName: Misha
-    dialogText: 'Hi Mr.Soldier will it be okay if i ask where we are? '
-  - characterName: Misha
-    dialogText: " \u2026. "
-  - characterName: Misha
-    dialogText: "Oh gosh\u2026. He is dead"
-  textSpeed: 0.05
-  characterImage: {fileID: 243817158}
-  characterSprites:
-  - {fileID: 21300000, guid: d58342e9751d05243b391cbbc2bb9c37, type: 3}
-  - {fileID: 21300000, guid: 3968374a9ba2f0247a6b97be982058eb, type: 3}
-  - {fileID: 21300000, guid: 7a5787225c5ddc24fb4e574894d66545, type: 3}
-  - {fileID: 21300000, guid: a533cec796f5be6449fe613da413225e, type: 3}
-  - {fileID: 21300000, guid: a533cec796f5be6449fe613da413225e, type: 3}
-  - {fileID: 21300000, guid: a533cec796f5be6449fe613da413225e, type: 3}
-  - {fileID: 21300000, guid: a533cec796f5be6449fe613da413225e, type: 3}
-  - {fileID: 21300000, guid: d58342e9751d05243b391cbbc2bb9c37, type: 3}
-  - {fileID: 21300000, guid: d58342e9751d05243b391cbbc2bb9c37, type: 3}
-  - {fileID: 21300000, guid: 3968374a9ba2f0247a6b97be982058eb, type: 3}
-  - {fileID: 21300000, guid: d58342e9751d05243b391cbbc2bb9c37, type: 3}
-  - {fileID: 21300000, guid: 3968374a9ba2f0247a6b97be982058eb, type: 3}
-  - {fileID: 21300000, guid: 7a5787225c5ddc24fb4e574894d66545, type: 3}
-  fadeImageToShow: {fileID: 0}
-  textHideImage: {fileID: 0}
-  fadeDuration: 1
-  delayBeforeFading: 1
 --- !u!114 &2002144783
 MonoBehaviour:
   m_ObjectHideFlags: 0

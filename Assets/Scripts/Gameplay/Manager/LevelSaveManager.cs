@@ -202,4 +202,11 @@ public class LevelSaveManager : MonoBehaviour
     {
         HideNoSaveNotification();
     }
+    public bool HasSaveData()
+    {
+        // Check if any of the save slots has data
+        return savedLevels.Any(levelList => levelList.Count > 0);
+    }
+
+    
 }

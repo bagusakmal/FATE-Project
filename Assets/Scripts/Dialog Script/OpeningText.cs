@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +12,20 @@ public class OpeningText : MonoBehaviour
     public float delayBetweenSentences = 1f;
     public CanvasGroup canvasGroupToHide;
     public CanvasGroup canvasGroupToShowNext;
+    public GameObject UI;
+    public GameObject DialogueBox;
+    private PlayerControl playerControl;
+    private PlayerCombatController playerCombatController;
 
     private void Start()
     {
         StartCoroutine(TypeOpeningText());
+        playerControl = FindObjectOfType<PlayerControl>();
+        playerCombatController = FindObjectOfType<PlayerCombatController>();
+        playerControl.enabled = false;
+        playerCombatController.enabled = false;
+        DialogueBox.SetActive(false);
+        UI.SetActive(false);
     }
 
     IEnumerator TypeOpeningText()
@@ -48,6 +59,8 @@ public class OpeningText : MonoBehaviour
 
     void ShowNextCanvasGroup()
     {
+        DialogueBox.SetActive(true);
+        UI.SetActive(true);
         StartCoroutine(FadeCanvasGroup(canvasGroupToShowNext, 1f, 1f));
     }
 
