@@ -54,6 +54,9 @@ TagManager:
   - name: Ground
     uniqueID: 1556359145
     locked: 0
+  - name: Ghost
+    uniqueID: 1236266263
+    locked: 0
   - name: Player
     uniqueID: 84638259
     locked: 0
