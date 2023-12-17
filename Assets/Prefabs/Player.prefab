@@ -597,7 +597,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 84638259
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -1720766144, guid: d5c79e7767b3855429c3349c821b5250, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -855,7 +855,7 @@ MonoBehaviour:
   projectileForce: 10
   cooldownBetweenSkills: 5
   skill2Cooldown: 1
-  projectileSpeed: 10
+  projectileSpeed: 40
   projectileMaxTravelDistance: 50
   attackSFX: {fileID: 8300000, guid: 1a7fed7d8eacef442a45555d0434e732, type: 3}
   attackAudioSource: {fileID: 5002929372549861005}

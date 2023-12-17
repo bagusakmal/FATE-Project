@@ -11360,7 +11360,7 @@ Transform:
   m_GameObject: {fileID: 590949453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.6, y: -0.36, z: 0}
+  m_LocalPosition: {x: -61.77, y: 0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11599,7 +11599,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -789229983
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -17612,7 +17612,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -789229983
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: dbb47b80a41c36641bfce90beb58ff9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -25521,7 +25521,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -789229983
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: -3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -35374,11 +35374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e26cba49ef231340943bd766f20940d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpPotionToggle: {fileID: 1511178930}
-  manaPotionToggle: {fileID: 2037706532}
-  potionInfoText: {fileID: 466152438}
-  potionDescriptionText: {fileID: 1590314859}
-  potionManager: {fileID: 1666523655}
 --- !u!114 &1666523657
 MonoBehaviour:
   m_ObjectHideFlags: 0
