@@ -2911,7 +2911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &114143780
 Transform:
   m_ObjectHideFlags: 0
@@ -10328,14 +10328,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a422808d08f1374bb5ea87a1aa1e137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItemIndex: 1
-  itemList: {fileID: 0}
-  sceneToLoad: Example
+  requiredItemIndex: 10
+  itemList: {fileID: 1845548685}
+  sceneToLoad: LV3
   hiddenObject: {fileID: 1554188587}
   hiddenObject2: {fileID: 1627256057}
-  loadingScreen: {fileID: 0}
+  loadingScreen: {fileID: 886620691}
   loadingSlider: {fileID: 0}
-  loadingText: {fileID: 0}
+  loadingText: {fileID: 1839178344}
   transitionSound: {fileID: 8300000, guid: c7218e70a7c6f0e4f8a7d0594d3c5bdf, type: 3}
   hiddenObject3Animator: {fileID: 855916591}
   delayBeforeTransition: 2.5
@@ -12090,6 +12090,7 @@ MonoBehaviour:
   health: 500
   deathEffect: {fileID: 7710329158316736338, guid: a39760c2c6ca8514a837ecb7ce73dbc9, type: 3}
   hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
+  Key: {fileID: 1605949758510316581, guid: a8c60eadcf0f0b74abbf14cc91adb55d, type: 3}
   isInvulnerable: 0
   Alive: {fileID: 127248235}
 --- !u!1 &1019836514

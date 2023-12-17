@@ -8,6 +8,7 @@ public class BossHealth : MonoBehaviour
 
 	public GameObject deathEffect;
 	public GameObject hitParticle;
+	public GameObject Key;
 
 	public bool isInvulnerable = false;
 
@@ -38,8 +39,10 @@ public class BossHealth : MonoBehaviour
 	}
 
 	void Die()
-	{
-		Instantiate(deathEffect, transform.position,transform.rotation);
+	{	
+		Alive.GetComponent<Transform>();
+		Instantiate(deathEffect, Alive.transform.position,Alive.transform.rotation);
+		Instantiate(Key, Alive.transform.position,Alive.transform.rotation);
 		Destroy(gameObject);
 	}
 }

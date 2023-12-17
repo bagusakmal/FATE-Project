@@ -29079,7 +29079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a422808d08f1374bb5ea87a1aa1e137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItemIndex: 1
+  requiredItemIndex: 11
   itemList: {fileID: 2041908581}
   sceneToLoad: Example
   hiddenObject: {fileID: 907686685}
@@ -70789,6 +70789,8 @@ MonoBehaviour:
   - {fileID: 972381248}
   - {fileID: 1330921111}
   - {fileID: 708184176}
+  noSaveNotification: {fileID: 0}
+  hideNoSaveButton: {fileID: 0}
 --- !u!114 &2041908583
 MonoBehaviour:
   m_ObjectHideFlags: 0
