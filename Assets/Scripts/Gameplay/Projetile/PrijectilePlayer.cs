@@ -7,6 +7,7 @@ public class PrijectilePlayer : MonoBehaviour
     private float speed;
     private float maxTravelDistance;
     private float damage;
+    public GameObject deathEffect;
 
     [SerializeField]
     private LayerMask whatIsDamageable;
@@ -46,11 +47,13 @@ public class PrijectilePlayer : MonoBehaviour
             foreach (Collider2D collider in damageHit)
             {
                 collider.transform.parent.SendMessage("Damage", attackDetails);
+                Instantiate(deathEffect, transform.position,transform.rotation);
                 Destroy(gameObject);
             }
 
             foreach (Collider2D collider in groundHit)
             {
+                Instantiate(deathEffect, transform.position,transform.rotation);
                 Destroy(gameObject);
             }
     }

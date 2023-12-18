@@ -22,7 +22,7 @@ public class IdleBoss : StateMachineBehaviour
 		rb = animator.GetComponent<Rigidbody2D>();
 		boss = animator.GetComponent<Boss>();
         cooldownTimer = 10f;
-        boomTimer = 15f;
+        boomTimer = 10f;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,12 +30,12 @@ public class IdleBoss : StateMachineBehaviour
     {
        boss.LookAtPlayer();
         
-        if (boomTimer <= 0f && Vector2.Distance(player.position, rb.position) <= attackRange)
+        if (boomTimer <= 0f && Vector2.Distance(player.position, rb.position) <= attackRange && Vector2.Distance(player.position, rb.position) <= closeRange)
 		{
 			animator.SetTrigger("Attack2");
             boomTimer = boomCooldown;
 		}
-        else if (cooldownTimer <= 0f && Vector2.Distance(player.position, rb.position) <= attackRange)
+        else if (cooldownTimer <= 0f && Vector2.Distance(player.position, rb.position) <= attackRange && Vector2.Distance(player.position, rb.position) >= closeRange)
 		{
 			animator.SetTrigger("Attack");
             cooldownTimer = attackCooldown;

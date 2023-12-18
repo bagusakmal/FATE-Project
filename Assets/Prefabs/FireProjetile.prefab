@@ -106,7 +106,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 84638259
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 558168229, guid: 1fd8f9c7c1cd464489cbd513ab072cfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f00328c75c11746b29c34059fcf651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffect: {fileID: 1738258609971779971, guid: b06033e934d3ad443a79af242c9defa0, type: 3}
   whatIsDamageable:
     serializedVersion: 2
     m_Bits: 256

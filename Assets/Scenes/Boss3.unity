@@ -15235,7 +15235,7 @@ MonoBehaviour:
   health: 500
   deathEffect: {fileID: 8311900567870794615, guid: 740b10d8baa57dc45a65a7d5ca329931, type: 3}
   hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
-  Key: {fileID: 0}
+  Key: {fileID: 1605949758510316581, guid: 9109e68ced3cead41a82a1e755567900, type: 3}
   isInvulnerable: 0
   Alive: {fileID: 41825001}
 --- !u!1 &949557213
