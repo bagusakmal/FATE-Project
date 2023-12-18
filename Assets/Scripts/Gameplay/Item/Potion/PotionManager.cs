@@ -84,9 +84,10 @@ public class PotionManager : MonoBehaviour
 
     void UpdatePotionCountText()
     {
-        hpPotionCountText.text = currentHpPotionCount + "/" + maxHpPotionCount;
-        manaPotionCountText.text = currentManaPotionCount + "/" + maxManaPotionCount;
+    hpPotionCountText.text = currentHpPotionCount + "/" + maxHpPotionCount;
+    manaPotionCountText.text = currentManaPotionCount + "/" + maxManaPotionCount;
     }
+
 
     void SavePotionCount()
     {

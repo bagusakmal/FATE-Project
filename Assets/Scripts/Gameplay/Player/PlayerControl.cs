@@ -156,6 +156,12 @@ public class PlayerControl : MonoBehaviour
         walkingAudioSource.Stop();
         isWalkingSFXPlaying = false;
     }
+
+    private void StopDashSFX(){
+        dashAudioSource.clip = dashSFX;
+        dashAudioSource.Stop();
+        isDashingSFXPlaying = false;
+    }
     
     private void FixedUpdate() 
     {

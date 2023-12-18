@@ -436,5 +436,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30935c6632a5dfe45a9f817606575336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 8720060816413959127, guid: 82b0df2bf663c9d489122eb8700d7469, type: 3}
   isFlipped: 0
