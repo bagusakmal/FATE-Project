@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DialogueBegin : MonoBehaviour
 {
     public GameObject objectToShow;
+    public GameObject hideinfo;
 
     [System.Serializable]
     public class DialogLine
@@ -42,6 +43,7 @@ public class DialogueBegin : MonoBehaviour
         playerControl.enabled = false;
         playerCombatController.enabled = false;
         UI.SetActive(false);
+        hideinfo.SetActive(false);
     }
 
     private void Update()
@@ -158,6 +160,7 @@ public class DialogueBegin : MonoBehaviour
         playerControl.enabled = true;
         playerCombatController.enabled = true;
         UI.SetActive(true);
+        hideinfo.SetActive(true);
         
     }
 
