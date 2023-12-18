@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Dialogue2Boss : MonoBehaviour
+public class DefeatBoss2 : MonoBehaviour
 {
     public GameObject objectToShow;
 
@@ -33,6 +33,7 @@ public class Dialogue2Boss : MonoBehaviour
     private PlayerControl playerControl;
     private PlayerCombatController playerCombatController;
     public GameObject UI;
+    private bool isDialogueActive = false;
 
     private void Start()
     {
@@ -47,6 +48,7 @@ public class Dialogue2Boss : MonoBehaviour
 
     private void Update()
     {
+    if (isDialogueActive){
         if (allowInput && Input.GetMouseButtonDown(0))
         {
             if (isTyping)
@@ -62,10 +64,12 @@ public class Dialogue2Boss : MonoBehaviour
                 CloseDialog();
             }
         }
+        }
     }
 
     IEnumerator StartDialog()
     {
+        isDialogueActive = true;
         objectToShow.SetActive(false);
         allowInput = false; // Disable input
         yield return new WaitForSeconds(1f);
@@ -81,7 +85,7 @@ public class Dialogue2Boss : MonoBehaviour
             nameText.text = currentDialog.characterName;
             ChangeCharacterImage(currentLine);
 
-            if (currentLine == 18)
+            if (currentLine == 10)
             {
                 StartCoroutine(ShowHideImageAndContinue());
             }
@@ -104,12 +108,12 @@ public class Dialogue2Boss : MonoBehaviour
         // Show the image
         fadeImageToShow.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(2f); // Wait for 5 seconds
+        yield return new WaitForSeconds(3f); // Wait for 5 seconds
 
         // Show textHideImage during image hiding
         textHideImage.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(1f); // Show textHideImage for 2 seconds
+        yield return new WaitForSeconds(2f); // Show textHideImage for 2 seconds
 
         // Hide textHideImage
         textHideImage.gameObject.SetActive(false);
