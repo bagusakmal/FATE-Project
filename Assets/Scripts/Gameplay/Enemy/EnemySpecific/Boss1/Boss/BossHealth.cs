@@ -13,6 +13,7 @@ public class BossHealth : MonoBehaviour
 	public bool isInvulnerable = false;
 
     public GameObject Alive;
+	public GameObject Dialogue;
 
 
 
@@ -44,5 +45,6 @@ public class BossHealth : MonoBehaviour
 		Instantiate(deathEffect, Alive.transform.position,Alive.transform.rotation);
 		Instantiate(Key, Alive.transform.position,Alive.transform.rotation);
 		Destroy(gameObject);
+		Dialogue.SetActive(true);
 	}
 }
