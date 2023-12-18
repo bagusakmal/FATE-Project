@@ -9211,6 +9211,7 @@ GameObject:
   - component: {fileID: 283111759}
   - component: {fileID: 283111758}
   - component: {fileID: 283111757}
+  - component: {fileID: 283111762}
   m_Layer: 9
   m_Name: Gatot
   m_TagString: Untagged
@@ -9375,9 +9376,22 @@ Transform:
   m_LocalPosition: {x: -25.3, y: -247.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1559855302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &283111762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283111756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dbec1c9c8cb76142bd833aa451d00e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &289337706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17692,8 +17706,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10.2415, y: 1.1729}
+  m_AnchoredPosition: {x: -0.000025034, y: 0.000024915}
+  m_SizeDelta: {x: 5.713, y: 4.0782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843407602
 MonoBehaviour:
@@ -17715,7 +17729,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Temukan Kunci
+  m_text: '[F]
+
+    To Interact'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 899f97dc973b1d643a48ba7e3be1e03c, type: 2}
   m_sharedMaterial: {fileID: 7610646256160519664, guid: 899f97dc973b1d643a48ba7e3be1e03c, type: 2}
@@ -17742,8 +17758,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.7
+  m_fontSizeBase: 0.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18813,7 +18829,7 @@ GameObject:
   - component: {fileID: 899843381}
   - component: {fileID: 899843382}
   m_Layer: 5
-  m_Name: DontHaveKey
+  m_Name: info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18836,8 +18852,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.1400003, y: -1.8000002}
-  m_SizeDelta: {x: 12.03019, y: 3.39999}
+  m_AnchoredPosition: {x: -0.43, y: 1.785}
+  m_SizeDelta: {x: 9.0009, y: 5.2561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &899843382
 Canvas:
@@ -19595,7 +19611,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 8.9258, y: 2.7913}
+  m_SizeDelta: {x: 5.713, y: 4.0782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940149567
 MonoBehaviour:
@@ -19610,7 +19626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8018868, g: 0.17702027, b: 0.17702027, a: 0.6901961}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -36249,7 +36265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1306462432
 Transform:
   m_ObjectHideFlags: 0
@@ -40371,11 +40387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e26cba49ef231340943bd766f20940d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpPotionToggle: {fileID: 1200014063}
-  manaPotionToggle: {fileID: 762073926}
-  potionInfoText: {fileID: 510629379}
-  potionDescriptionText: {fileID: 642013474}
-  potionManager: {fileID: 1464958414}
 --- !u!114 &1464958414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107985,12 +107996,12 @@ Transform:
   m_GameObject: {fileID: 1559855301}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.162899, y: -242.91249, z: 18.129997}
+  m_LocalPosition: {x: 2.1371002, y: 4.887512, z: 18.129997}
   m_LocalScale: {x: 4.162652, y: 2.204555, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 899843381}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 283111761}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1559855303
 SpriteRenderer:
@@ -108102,6 +108113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToShow: {fileID: 845897467}
+  hiddenGameObject: {fileID: 899843380}
+  hiddenFragment: {fileID: 1306462431}
+  hideGatot: {fileID: 283111756}
+  hideInfo: {fileID: 899843380}
+  showHiddenObjectOnStart: 0
   nameText: {fileID: 122670368}
   dialogText: {fileID: 1104601781}
   dialogLines:
@@ -125737,7 +125753,6 @@ SceneRoots:
   - {fileID: 1952182167}
   - {fileID: 1188117512}
   - {fileID: 283111761}
-  - {fileID: 1559855302}
   - {fileID: 1170112372}
   - {fileID: 829104212}
   - {fileID: 557168208}
