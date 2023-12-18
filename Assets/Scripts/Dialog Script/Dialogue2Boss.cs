@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Dialogue1Boss : MonoBehaviour
+public class Dialogue2Boss : MonoBehaviour
 {
     public GameObject objectToShow;
 
@@ -33,7 +33,6 @@ public class Dialogue1Boss : MonoBehaviour
     private PlayerControl playerControl;
     private PlayerCombatController playerCombatController;
     public GameObject UI;
-    private bool isDialogueActive = false;
 
     private void Start()
     {
@@ -48,7 +47,6 @@ public class Dialogue1Boss : MonoBehaviour
 
     private void Update()
     {
-    if (isDialogueActive){
         if (allowInput && Input.GetMouseButtonDown(0))
         {
             if (isTyping)
@@ -64,12 +62,10 @@ public class Dialogue1Boss : MonoBehaviour
                 CloseDialog();
             }
         }
-        }
     }
 
     IEnumerator StartDialog()
     {
-        isDialogueActive = true;
         objectToShow.SetActive(false);
         allowInput = false; // Disable input
         yield return new WaitForSeconds(1f);
