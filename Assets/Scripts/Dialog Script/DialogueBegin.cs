@@ -73,6 +73,8 @@ public class DialogueBegin : MonoBehaviour
 
     void ShowNextLine()
     {
+        playerControl.enabled = false;
+        playerCombatController.enabled = false;
         if (currentLine < dialogLines.Count)
         {
             DialogLine currentDialog = dialogLines[currentLine];
@@ -97,6 +99,8 @@ public class DialogueBegin : MonoBehaviour
 
     IEnumerator ShowHideImageAndContinue()
     {
+        playerControl.enabled = false;
+        playerCombatController.enabled = false;
         allowInput = false; // Disable input during image display
 
         // Show the image

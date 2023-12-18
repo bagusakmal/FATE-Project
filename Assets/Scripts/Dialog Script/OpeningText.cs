@@ -59,6 +59,8 @@ public class OpeningText : MonoBehaviour
 
     void ShowNextCanvasGroup()
     {
+        playerControl.enabled = true;
+        playerCombatController.enabled = true;
         DialogueBox.SetActive(true);
         UI.SetActive(true);
         StartCoroutine(FadeCanvasGroup(canvasGroupToShowNext, 1f, 1f));
