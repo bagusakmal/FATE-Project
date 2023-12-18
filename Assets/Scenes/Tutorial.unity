@@ -23830,7 +23830,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1126192161}
-  - component: {fileID: 1126192159}
   - component: {fileID: 1126192160}
   m_Layer: 0
   m_Name: Dialogue Manager
@@ -23839,25 +23838,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1126192159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1126192158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23371481c28513341a5559c78982f218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: Lv1
-  loadingScreen: {fileID: 0}
-  loadingSlider: {fileID: 0}
-  loadingText: {fileID: 0}
-  levelSaveManager: {fileID: 0}
-  warning: {fileID: 0}
-  loadingTime: 2
 --- !u!114 &1126192160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39182,7 +39162,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1126192159}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneStartButton, Assembly-CSharp
         m_MethodName: LoadSceneWithLoadingScreen
         m_Mode: 1
