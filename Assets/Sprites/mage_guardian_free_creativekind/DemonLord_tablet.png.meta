@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: 5da6ca76975ec99499b72002c5ceef48
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DemonLord_tablet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 713.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.5148284, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eefabab00f3fc7b49aba564af9815cf0
+      internalID: 742782532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_1
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 713.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.51801986, y: 0.4965047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599bf8e1a83d1e04a927783cf272379f
+      internalID: -1972352594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_2
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 713.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.5180511, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00438735b3ed3514c93b23218b3b619e
+      internalID: -1258211905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_3
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 713.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.5180311, y: 0.4989071}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2278e72766b8b9b4ea3b668f4e7502f5
+      internalID: 136047742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_4
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 713.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.5164855, y: 0.49885783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b783dba860a2bb4c89b6e34598c2cab
+      internalID: -949602965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_5
+      rect:
+        serializedVersion: 2
+        x: 3460
+        y: 713.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.51845485, y: 0.50085235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e857729845ffb448b7008499062f306
+      internalID: 454728185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_6
+      rect:
+        serializedVersion: 2
+        x: 4152
+        y: 713.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.5171442, y: 0.49848878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266c1383a1325e947bb2c7646fe5800d
+      internalID: 1321351581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.51678544, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 849eaae45ce9abc4c8d9c4257041881a
+      internalID: -1517606842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_8
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 0.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.51735055, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccabe9b1eacdee643be97366b85e9cb9
+      internalID: 698527918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_9
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 0.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.5186051, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eacc2fc00b9ae447996b73dbd1049dc
+      internalID: 2093760341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_10
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 0.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.51642907, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d93b3366b17d74ba421e2916cc1385
+      internalID: 2066242373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_11
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 0.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.5214064, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833fa28cc0f668349abd1c7ce2feebf3
+      internalID: -2066243289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_12
+      rect:
+        serializedVersion: 2
+        x: 3471
+        y: 0
+        width: 692
+        height: 714
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df37bed60d4fde747a80601448dc0a6e
+      internalID: -1313334994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonLord_tablet_13
+      rect:
+        serializedVersion: 2
+        x: 4152
+        y: 0.5
+        width: 692
+        height: 713.5
+      alignment: 9
+      pivot: {x: 0.5177496, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc255bda3c44e04db325bd6d7f1e75d
+      internalID: 1904769990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DemonLord_tablet_0: 742782532
+      DemonLord_tablet_1: -1972352594
+      DemonLord_tablet_10: 2066242373
+      DemonLord_tablet_11: -2066243289
+      DemonLord_tablet_12: -1313334994
+      DemonLord_tablet_13: 1904769990
+      DemonLord_tablet_2: -1258211905
+      DemonLord_tablet_3: 136047742
+      DemonLord_tablet_4: -949602965
+      DemonLord_tablet_5: 454728185
+      DemonLord_tablet_6: 1321351581
+      DemonLord_tablet_7: -1517606842
+      DemonLord_tablet_8: 698527918
+      DemonLord_tablet_9: 2093760341
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
