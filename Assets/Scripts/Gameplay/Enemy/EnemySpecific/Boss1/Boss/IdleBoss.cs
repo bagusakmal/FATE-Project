@@ -21,7 +21,7 @@ public class IdleBoss : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 		rb = animator.GetComponent<Rigidbody2D>();
 		boss = animator.GetComponent<Boss>();
-        cooldownTimer = 10f;
+        cooldownTimer = 5f;
         boomTimer = 10f;
     }
 

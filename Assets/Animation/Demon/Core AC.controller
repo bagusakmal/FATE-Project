@@ -184,8 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 100
   closeRange: 3
-  attackCooldown: 5
-  boomCooldown: 8
+  attackCooldown: 3
+  boomCooldown: 5
   attackOffset: {x: 0, y: 0, z: 0}
 --- !u!1101 &-1342055721219871708
 AnimatorStateTransition:
@@ -226,19 +226,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsEnraged
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
