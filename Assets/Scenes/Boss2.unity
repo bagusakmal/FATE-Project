@@ -11278,7 +11278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredItemIndex: 4
   itemList: {fileID: 1845548685}
-  sceneToLoad: LV3
+  sceneToLoad: Dialogue LV3
   hiddenObject: {fileID: 1554188587}
   hiddenObject2: {fileID: 1627256057}
   loadingScreen: {fileID: 886620691}
@@ -13035,7 +13035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed37636bfd832c44dab13a28fd3f752a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 300
   deathEffect: {fileID: 7710329158316736338, guid: a39760c2c6ca8514a837ecb7ce73dbc9, type: 3}
   hitParticle: {fileID: 7007057449702113175, guid: 6a51dca1ea4f7a2429c2669acce186ab, type: 3}
   Key: {fileID: 1605949758510316581, guid: a8c60eadcf0f0b74abbf14cc91adb55d, type: 3}
