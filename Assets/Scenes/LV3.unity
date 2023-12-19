@@ -28816,7 +28816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredItemIndex: 6
   itemList: {fileID: 2041908581}
-  sceneToLoad: Bialogue Boss 3
+  sceneToLoad: Dialogue Boss 3
   hiddenObject: {fileID: 907686685}
   hiddenObject2: {fileID: 195612342}
   loadingScreen: {fileID: 1090140822}
