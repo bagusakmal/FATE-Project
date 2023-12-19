@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 132249180}
   - component: {fileID: 132249179}
   - component: {fileID: 132249178}
-  - component: {fileID: 132249185}
   - component: {fileID: 132249184}
   m_Layer: 5
   m_Name: MishaDialogue
@@ -307,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f798162ff6513ed438814603a561faf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToShow: {fileID: 132249177}
+  objectToShow: {fileID: 1376453232}
   nameText: {fileID: 1171469749}
   dialogText: {fileID: 864157147}
   dialogLines:
@@ -593,8 +592,8 @@ MonoBehaviour:
   - characterName: Misha
     dialogText: 'I will definitely get my revenge on every one of you! '
     backgroundSprite: {fileID: 21300000, guid: ed159036561204442bca23db701c4ba3, type: 3}
-  - characterName: ' '
-    dialogText: ...
+  - characterName: Maid
+    dialogText: "\"My lord what tea are you going to have today\u201D"
     backgroundSprite: {fileID: 21300000, guid: 0b84ce307773ac345ad48c128b2e1212, type: 3}
   - characterName: Maid
     dialogText: "\"My lord what tea are you going to have today\u201D"
@@ -726,23 +725,6 @@ MonoBehaviour:
   fadeDuration: 1.04
   delayBeforeFading: 2
   scrollingTextList: []
---- !u!114 &132249185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132249177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5524444a91cb51b40a1da3a39f7c5cb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: Main Menu
-  loadingScreen: {fileID: 2094999152}
-  loadingSlider: {fileID: 1483851729}
-  loadingText: {fileID: 1892555550}
-  loadingTime: 2
 --- !u!1 &366458893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,6 +2091,7 @@ GameObject:
   - component: {fileID: 1523610705}
   - component: {fileID: 1523610704}
   - component: {fileID: 1523610703}
+  - component: {fileID: 1523610707}
   m_Layer: 5
   m_Name: btn continue
   m_TagString: Untagged
@@ -2251,6 +2234,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523610701}
   m_CullTransparentMesh: 1
+--- !u!114 &1523610707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523610701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5524444a91cb51b40a1da3a39f7c5cb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Credit
+  loadingScreen: {fileID: 2094999152}
+  loadingSlider: {fileID: 1483851729}
+  loadingText: {fileID: 1892555550}
+  loadingTime: 2
 --- !u!1 &1540592490
 GameObject:
   m_ObjectHideFlags: 0

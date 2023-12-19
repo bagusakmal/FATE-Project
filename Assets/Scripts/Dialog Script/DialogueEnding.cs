@@ -240,7 +240,7 @@ IEnumerator ShowHideImageAndContinue2()
 
     void CloseDialog()
     {
-        objectToShow.SetActive(false);
+        objectToShow.SetActive(true);
         playerControl.enabled = true;
         playerCombatController.enabled = true;
     }
