@@ -2184,8 +2184,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneStartButton, Assembly-CSharp
+      - m_Target: {fileID: 1523610707}
+        m_TargetAssemblyTypeName: LoadSceneLoading, Assembly-CSharp
         m_MethodName: LoadSceneWithLoadingScreen
         m_Mode: 1
         m_Arguments:
