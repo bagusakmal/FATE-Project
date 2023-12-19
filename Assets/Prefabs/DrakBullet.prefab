@@ -183,7 +183,7 @@ MonoBehaviour:
   duration: 10
   attackDamage: 20
   deathEffect: {fileID: 1738258609971779971, guid: 135f447ea3353b44eabf4ba57ea6db4d, type: 3}
-  isFlipped: 1
+  isFlipped: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128

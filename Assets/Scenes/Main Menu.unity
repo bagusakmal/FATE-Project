@@ -11100,7 +11100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23371481c28513341a5559c78982f218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Prologue
+  sceneToLoad: Tutorial
   loadingScreen: {fileID: 65464159}
   loadingSlider: {fileID: 1436819452}
   loadingText: {fileID: 2009425463}

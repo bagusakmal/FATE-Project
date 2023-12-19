@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ProjectileDrak : MonoBehaviour
 {
-    private GameObject player;  // Pemain yang akan diikuti
+    private Transform player;
+	private GameObject Player;
     private Transform playerTransform;
     public float projectileSpeed = 5f;
     public float duration = 3f;  // Durasi dalam detik
@@ -28,10 +29,11 @@ public class ProjectileDrak : MonoBehaviour
 
     void Start()
     {
-        GameObject playerObject = GameObject.Find("Player");
-         if (playerObject != null) {
+        Player = GameObject.FindWithTag("Player");
+    	
+         if (Player != null) {
         // Dapatkan komponen Transform dari objek pemain dan simpan referensinya
-        playerTransform = playerObject.GetComponent<Transform>();
+        player = Player.GetComponent<PlayerControl>().transform;
         } else {
         Debug.LogError("Objek Player tidak ditemukan!");
         }
@@ -47,7 +49,7 @@ public class ProjectileDrak : MonoBehaviour
         if (Time.time - startTime < duration)
         {
             // Hitung arah ke pemain
-            Vector2 direction = (playerTransform.position - transform.position).normalized;
+            Vector2 direction = (player.position - transform.position).normalized;
 
             // Terapkan gaya ke rigidbody untuk menggerakkan proyektil
             rb.velocity = direction * projectileSpeed;
@@ -82,18 +84,18 @@ public class ProjectileDrak : MonoBehaviour
 
     }
 
-    public void LookAtPlayer()
+   public void LookAtPlayer()
 	{
 		Vector3 flipped = transform.localScale;
 		flipped.z *= -1f;
 
-		if (transform.position.x > playerTransform.position.x && isFlipped)
+		if (transform.position.x > player.position.x && isFlipped)
 		{
 			transform.localScale = flipped;
 			transform.Rotate(0f, 180f, 0f);
 			isFlipped = false;
 		}
-		else if (transform.position.x < playerTransform.position.x && !isFlipped)
+		else if (transform.position.x < player.position.x && !isFlipped)
 		{
 			transform.localScale = flipped;
 			transform.Rotate(0f, 180f, 0f);

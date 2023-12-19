@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: 0e463b557dd28af45b224a8deea095ae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prologue.unity
     guid: 71398b4d172123242b1de5af8d0b1db6
   - enabled: 0
@@ -17,18 +17,24 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Example2.unity
     guid: af21cf2383425f44c969d230496a895c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 7653d065bdb501e4db8bebc7a8b2fbb2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LV1.unity
     guid: cbdb20b8a6a37b84a981444db62d0d31
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/Dialogue Boss1.unity
+    guid: 18a548314fda77b4f8be959868b9ffce
+  - enabled: 0
     path: Assets/Scenes/Boss1.unity
     guid: 637d9a0a82383a7418955136d65870bd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LV2.unity
     guid: c78c0eeebbd5aef4287610caf2fef01b
+  - enabled: 1
+    path: Assets/Scenes/Dialogoue Boss2.unity
+    guid: 88c32d8a2c609b841b6cc594e2f370dd
   - enabled: 1
     path: Assets/Scenes/Boss2.unity
     guid: c517c6ac47069ab4190b3b0c78d32a04
@@ -36,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LV3.unity
     guid: 8382fa8ceb1ab0a44b6c715ccaecb216
   - enabled: 1
+    path: Assets/Scenes/Boss3.unity
+    guid: 67df85fc4ed0ec5448b129286f9b6a39
+  - enabled: 0
     path: Assets/Scenes/Example.unity
     guid: 441ad8980dd503d4b8b467b7f846a5db
   m_configObjects: {}

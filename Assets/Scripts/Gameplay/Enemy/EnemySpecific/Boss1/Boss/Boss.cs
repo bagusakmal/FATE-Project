@@ -5,8 +5,14 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     public Transform player;
+	private GameObject Player;
 
 	public bool isFlipped = false;
+	void Start()
+	{
+		Player = GameObject.FindWithTag("Player");
+    	player = Player.GetComponent<PlayerControl>().transform;
+	}
 
 	public void LookAtPlayer()
 	{
