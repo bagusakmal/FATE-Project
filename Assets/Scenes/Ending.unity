@@ -592,8 +592,8 @@ MonoBehaviour:
   - characterName: Misha
     dialogText: 'I will definitely get my revenge on every one of you! '
     backgroundSprite: {fileID: 21300000, guid: ed159036561204442bca23db701c4ba3, type: 3}
-  - characterName: Maid
-    dialogText: "\"My lord what tea are you going to have today\u201D"
+  - characterName: ' '
+    dialogText: ...
     backgroundSprite: {fileID: 21300000, guid: 0b84ce307773ac345ad48c128b2e1212, type: 3}
   - characterName: Maid
     dialogText: "\"My lord what tea are you going to have today\u201D"
@@ -960,7 +960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misha go to sleep
+  m_text: Misha goes to sleep
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 899f97dc973b1d643a48ba7e3be1e03c, type: 2}
   m_sharedMaterial: {fileID: 7610646256160519664, guid: 899f97dc973b1d643a48ba7e3be1e03c, type: 2}
