@@ -9,17 +9,17 @@ public class ListFragment : MonoBehaviour
     public PlayerCombatController playerCombatController;
 
     [System.Serializable]
-    public struct ItemData
+    public struct FragmentData
     {
         public Sprite img;
         public string itemName;
         public string itemDescription;
     }
 
-    public ItemData[] itemList;
+    public FragmentData[] itemList;
     public Sprite defaultImage;
     public Image[] itemImages;
-    public List<int> collectedItems = new List<int>();
+    public List<int> collectedFragment = new List<int>();
     public PlayerStats playerStats; // Add reference to PlayerStats
     public Canvas itemInfoCanvas; 
     public Image itemInfoImage;   
@@ -45,9 +45,9 @@ public class ListFragment : MonoBehaviour
     {
         for (int i = 0; i < itemImages.Length; i++)
         {
-            if (i < collectedItems.Count)
+            if (i < collectedFragment.Count)
             {
-                int itemIndex = collectedItems[i];
+                int itemIndex = collectedFragment[i];
 
                 if (itemIndex < itemList.Length)
                 {
@@ -64,7 +64,7 @@ public class ListFragment : MonoBehaviour
     void ApplyCollectedItemsEffects()
     {
         // Iterate through the collected items and apply their effects to PlayerStats
-        foreach (int itemIndex in collectedItems)
+        foreach (int itemIndex in collectedFragment)
         {
             if (itemIndex >= 0 && itemIndex < itemList.Length)
             {
@@ -109,39 +109,39 @@ public class ListFragment : MonoBehaviour
 
     public void DeleteAllItems()
     {
-        collectedItems.Clear();
+        collectedFragment.Clear();
         SaveCollectedItems();
         DisplayCollectedItems();
     }
 
     private void SaveCollectedItems()
     {
-        string key = "CollectedItems";
-        string data = string.Join(",", collectedItems.ConvertAll(i => i.ToString()).ToArray());
+        string key = "CollectedFragment";
+        string data = string.Join(",", collectedFragment.ConvertAll(i => i.ToString()).ToArray());
         PlayerPrefs.SetString(key, data);
     }
 
     public void LoadCollectedItems()
     {
-        string key = "CollectedItems";
+        string key = "CollectedFragment";
         if (PlayerPrefs.HasKey(key))
         {
             string data = PlayerPrefs.GetString(key);
             string[] indices = data.Split(',');
-            collectedItems = new List<int>(System.Array.ConvertAll(indices, int.Parse));
+            collectedFragment = new List<int>(System.Array.ConvertAll(indices, int.Parse));
         }
     }
 
     public bool HasItemBeenCollected(int itemIndex)
     {
-        return collectedItems.Contains(itemIndex);
+        return collectedFragment.Contains(itemIndex);
     }
 
     public void AddItemToCollectedList(int itemIndex)
     {
-        if (!collectedItems.Contains(itemIndex))
+        if (!collectedFragment.Contains(itemIndex))
         {
-            collectedItems.Add(itemIndex);
+            collectedFragment.Add(itemIndex);
             SaveCollectedItems();
             DisplayCollectedItems();
             ApplyItemEffect(itemIndex);

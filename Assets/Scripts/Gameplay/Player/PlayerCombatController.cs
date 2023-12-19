@@ -83,8 +83,8 @@ public class PlayerCombatController : MonoBehaviour
 
     private void SaveAttack1Damage()
     {
-        // PlayerPrefs.SetFloat(Attack1DamageKey, attack1Damage);
-        // PlayerPrefs.Save();
+        PlayerPrefs.SetFloat(Attack1DamageKey, attack1Damage);
+        PlayerPrefs.Save();
     }
 
     private void LoadAttack1Damage()

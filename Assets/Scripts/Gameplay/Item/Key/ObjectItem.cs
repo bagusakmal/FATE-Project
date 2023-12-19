@@ -13,6 +13,7 @@ public class ObjectItem : MonoBehaviour
     {
         if (gameManager != null)
         {
+            Debug.Log("item delet");
             gameManager.OnObjectDestroyed(gameObject.name);
         }
     }

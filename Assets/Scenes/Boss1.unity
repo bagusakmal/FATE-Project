@@ -5735,56 +5735,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemList:
-  - img: {fileID: -1876086126, guid: eadf18a9007cedd428435b997b7b1983, type: 3}
-    itemName: Key 1
-    itemDescription: Move to Level 2
   - img: {fileID: -245520236, guid: eadf18a9007cedd428435b997b7b1983, type: 3}
-    itemName: Key 2
-    itemDescription: Move to Level 3
-  - img: {fileID: 21300000, guid: 16f01b9054016bf49a619f583146d6ca, type: 3}
-    itemName: Mana Potion
-    itemDescription: Ya ndak tau kok tanya saya
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
+    itemName: Bronz Key
+    itemDescription: Move to Level 1
+  - img: {fileID: -245520236, guid: eadf18a9007cedd428435b997b7b1983, type: 3}
+    itemName: Bronz Key
+    itemDescription: Move to Boss 1
   - img: {fileID: -1876086126, guid: eadf18a9007cedd428435b997b7b1983, type: 3}
-    itemName: Key
-    itemDescription: Portal Key
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
-  - img: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
-    itemName: Rage
-    itemDescription: Mode mabuk
+    itemName: Gold Key
+    itemDescription: Move to level 2
+  - img: {fileID: -245520236, guid: eadf18a9007cedd428435b997b7b1983, type: 3}
+    itemName: Bronz Key
+    itemDescription: Move to Boss 2
+  - img: {fileID: -1876086126, guid: eadf18a9007cedd428435b997b7b1983, type: 3}
+    itemName: Gold Key
+    itemDescription: Move to level 3
+  - img: {fileID: -245520236, guid: eadf18a9007cedd428435b997b7b1983, type: 3}
+    itemName: Bronz Key
+    itemDescription: Move to Boss 3
+  - img: {fileID: -1876086126, guid: eadf18a9007cedd428435b997b7b1983, type: 3}
+    itemName: Gold Key
+    itemDescription: Move to Ending
   defaultImage: {fileID: -496041807, guid: 9e868ac04b3a07d49bc7da4142b8040c, type: 3}
   itemImages:
   - {fileID: 159317384}
   - {fileID: 1791861887}
   - {fileID: 445115388}
-  - {fileID: 1979553815}
-  - {fileID: 1979553815}
-  - {fileID: 1979553815}
-  - {fileID: 1979553815}
-  - {fileID: 1979553815}
-  - {fileID: 1979553815}
   - {fileID: 1979553815}
   - {fileID: 1979553815}
   - {fileID: 1979553815}
@@ -5885,7 +5861,7 @@ MonoBehaviour:
   - {fileID: 1088475989}
   - {fileID: 981983685}
   - {fileID: 287229265}
-  collectedItems: 
+  collectedFragment: 
   playerStats: {fileID: 811767410}
   itemInfoCanvas: {fileID: 807797314}
   itemInfoImage: {fileID: 367185088}
@@ -29508,7 +29484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a422808d08f1374bb5ea87a1aa1e137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItemIndex: 8
+  requiredItemIndex: 2
   itemList: {fileID: 256518710}
   sceneToLoad: LV2
   hiddenObject: {fileID: 1287525792}
