@@ -40,6 +40,9 @@ public class DialogueEnding : MonoBehaviour
     private PlayerControl playerControl;
     private PlayerCombatController playerCombatController;
     public List<ScrollingText> scrollingTextList; // New: List of scrolling texts
+    public AudioSource bgmAudioSource;
+public AudioClip bgm1;
+public AudioClip bgm2;
 
     private int currentLine = 0;
     private bool isTyping = false;
@@ -52,6 +55,9 @@ public class DialogueEnding : MonoBehaviour
         playerCombatController = FindObjectOfType<PlayerCombatController>();
         playerControl.enabled = false;
         playerCombatController.enabled = false;
+        bgmAudioSource = GetComponent<AudioSource>();
+        bgmAudioSource.clip = bgm1; // Atur BGM awal
+        bgmAudioSource.Play();
     }
 
     private void Update()
@@ -96,6 +102,14 @@ public class DialogueEnding : MonoBehaviour
             if (currentLine == 94)
             {
                 StartCoroutine(ShowHideImageAndContinue2());
+            }
+            if (currentLine == 42)
+            {
+                 // Ganti BGM ke bgm2 pada dialog 44
+                bgmAudioSource.clip = bgm2;
+                bgmAudioSource.Play();
+                currentLine++;
+                ShowNextLine();
             }
             else
             {
@@ -240,7 +254,7 @@ IEnumerator ShowHideImageAndContinue2()
 
     void CloseDialog()
     {
-        objectToShow.SetActive(false);
+        objectToShow.SetActive(true);
         playerControl.enabled = true;
         playerCombatController.enabled = true;
     }

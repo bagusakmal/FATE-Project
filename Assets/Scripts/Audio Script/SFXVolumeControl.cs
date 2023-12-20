@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-public class SoundManagerScript : MonoBehaviour
+public class SFXManagerScript : MonoBehaviour
 {
     public Slider sfxSlider;
     public AudioSource[] sfxAudioSources;
