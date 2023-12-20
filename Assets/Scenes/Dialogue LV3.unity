@@ -72030,22 +72030,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCombatController: {fileID: 0}
   itemList:
-  - img: {fileID: 21300000, guid: 3b10b02b08a94324a8434d92ae42f0fd, type: 3}
+  - img: {fileID: 21300000, guid: 2a2dfb381a2132945bd86907abd6f0e5, type: 3}
     itemName: Fragment 1
     itemDescription: Max HP+20
-  - img: {fileID: 21300000, guid: 3b10b02b08a94324a8434d92ae42f0fd, type: 3}
+  - img: {fileID: 21300000, guid: 47b768328577b53429afc844385e0798, type: 3}
     itemName: Fragment 2
     itemDescription: Max HP + 20
-  - img: {fileID: 21300000, guid: 3b10b02b08a94324a8434d92ae42f0fd, type: 3}
+  - img: {fileID: 21300000, guid: 7d9dc22bdf1de5e4c94d174071e84a83, type: 3}
     itemName: Fragment 3
     itemDescription: Attack + 10
-  - img: {fileID: 21300000, guid: 3b10b02b08a94324a8434d92ae42f0fd, type: 3}
+  - img: {fileID: 21300000, guid: 4f658104dac119c40bfa2debb63ddfd3, type: 3}
     itemName: Fragment 4
     itemDescription: Attack + 10
-  - img: {fileID: 21300000, guid: 3b10b02b08a94324a8434d92ae42f0fd, type: 3}
+  - img: {fileID: 21300000, guid: 909465cf4a87c204ebc9d216ae7a78dc, type: 3}
     itemName: Fragment 5
     itemDescription: Max MP + 10
-  - img: {fileID: 21300000, guid: 3b10b02b08a94324a8434d92ae42f0fd, type: 3}
+  - img: {fileID: 21300000, guid: df95c15ea05afab4883466e262a0dc08, type: 3}
     itemName: Fragment 6
     itemDescription: Max MP + 10
   defaultImage: {fileID: 21300000, guid: 60642de97da19db43a429b9985081e18, type: 3}

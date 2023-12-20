@@ -104,7 +104,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.0166667
+  - time: 0.11666667
     functionName: LookAtPlayer
     data: 
     objectReferenceParameter: {fileID: 0}
